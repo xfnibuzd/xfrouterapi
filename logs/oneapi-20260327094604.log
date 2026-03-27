@@ -1,0 +1,347 @@
+[SYS] 2026/03/27 - 09:46:04 | initializing token encoders 
+[SYS] 2026/03/27 - 09:46:04 | token encoders initialized 
+[SYS] 2026/03/27 - 09:46:04 | using PostgreSQL as database 
+[SYS] 2026/03/27 - 09:46:04 | database migration started 
+[SYS] 2026/03/27 - 09:46:07 | system is already initialized at: 2026-03-26 17:26:44 +0800 CST 
+[SYS] 2026/03/27 - 09:46:07 | SYNC_FREQUENCY not set, use default value 60 
+[SYS] 2026/03/27 - 09:46:07 | Redis is enabled 
+[SYS] 2026/03/27 - 09:46:07 | i18n initialized with languages: zh-CN, zh-TW, en 
+[SYS] 2026/03/27 - 09:46:07 | Loaded 0 custom OAuth providers 
+[SYS] 2026/03/27 - 09:46:07 | New API v0.11.9-alpha.3 started 
+[SYS] 2026/03/27 - 09:46:07 | memory cache enabled 
+[SYS] 2026/03/27 - 09:46:07 | sync frequency: 60 seconds 
+[SYS] 2026/03/27 - 09:46:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:46:07 | 正在更新数据看板数据... 
+[SYS] 2026/03/27 - 09:46:07 | batch update enabled with interval 5s 
+[SYS] 2026/03/27 - 09:46:07 | 保存数据看板数据成功，共保存0条数据 
+[INFO] 2026/03/27 - 09:46:07 | SYSTEM | codex credential auto-refresh task started: tick=10m0s threshold=24h0m0s 
+[SYS] 2026/03/27 - 09:46:07 | upstream model update task started: interval=30m0s 
+
+  [32mNew API v0.11.9-alpha.3[0m  ready in 3410 ms
+
+[INFO] 2026/03/27 - 09:46:07 | SYSTEM | subscription quota reset task started: tick=1m0s 
+  ➜  [1mNetwork:[0m http://172.19.0.4:3000/
+
+[GIN] 2026/03/27 - 09:46:10 | web | 20260327014610417565952s1UEmYCE | 200 |    2.842539ms |    192.168.65.1 |     GET /
+[GIN] 2026/03/27 - 09:46:11 | api | 20260327014611164618827G1fs5FBx | 200 |      1.7318ms |    192.168.65.1 |     GET /api/status
+[GIN] 2026/03/27 - 09:46:11 | api | 20260327014611195531107QflNjnAv | 200 |    1.464235ms |    192.168.65.1 |     GET /api/notice
+[GIN] 2026/03/27 - 09:46:11 | api | 20260327014611195745482p2D9Isvh | 200 |    3.470377ms |    192.168.65.1 |     GET /api/home_page_content
+[GIN] 2026/03/27 - 09:46:11 | web | 2026032701461154228430644dHoRUk | 200 |    2.805988ms |    192.168.65.1 |     GET /
+[GIN] 2026/03/27 - 09:46:11 | api | 20260327014611963718024uVQxgHax | 200 |    1.357737ms |    192.168.65.1 |     GET /api/status
+[GIN] 2026/03/27 - 09:46:18 | web | 2026032701461873636848saHi2o39 | 200 |    2.348226ms |    192.168.65.1 |     GET /
+[GIN] 2026/03/27 - 09:46:18 | api | 20260327014618219937988KerSNmkd | 200 |    5.494462ms |    192.168.65.1 |     GET /api/status
+[GIN] 2026/03/27 - 09:46:18 | api | 20260327014618241216916UDCgifoD | 200 |    1.384848ms |    192.168.65.1 |     GET /api/home_page_content
+[GIN] 2026/03/27 - 09:46:18 | api | 20260327014618241216858UVQKaTFq | 200 |    1.586065ms |    192.168.65.1 |     GET /api/notice
+[SYS] 2026/03/27 - 09:46:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:46:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:46:28 | api | 20260327014628844620323SS0h5kFb | 401 |    8.148135ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:46:28 | web | 20260327014628870314577IUF3kxp2 | 200 |    5.505341ms |    192.168.65.1 |     GET /login?expired=true
+[GIN] 2026/03/27 - 09:46:29 | api | 2026032701462996949321EhhdZ2nl | 200 |    1.522811ms |    192.168.65.1 |     GET /api/status
+[GIN] 2026/03/27 - 09:46:33 | api | 20260327014633981819923oiUmM2oB | 200 |    1.314526ms |             ::1 |     GET /api/status
+[GIN] 2026/03/27 - 09:46:35 | api | 20260327014635690541803vX1AEde3 | 200 |   92.534504ms |    192.168.65.1 |    POST /api/user/login?turnstile=
+[GIN] 2026/03/27 - 09:46:35 | api | 2026032701463582874827518m1MVSR | 200 |   17.315225ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:46:36 | api | 20260327014635998892315opHCaEVP | 200 |    3.704916ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:46:36 | api | 202603270146361178771QSN9tHxQ | 200 |    4.938606ms |    192.168.65.1 |     GET /api/data/?username=&start_timestamp=1774489595&end_timestamp=1774579595&default_time=hour
+[GIN] 2026/03/27 - 09:46:36 | api | 20260327014636109309399G7EhCNdf | 200 |    1.538626ms |    192.168.65.1 |     GET /api/uptime/status
+[SYS] 2026/03/27 - 09:46:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:46:37 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:46:43 | api | 20260327014643315701190akI1jRnx | 200 |     8.05552ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:46:43 | api | 20260327014643322404161yi6Gw8WC | 200 |    2.781429ms |    192.168.65.1 |     GET /api/group/
+[GIN] 2026/03/27 - 09:46:43 | api | 20260327014643315849255WqDOAolP | 200 |    21.62282ms |    192.168.65.1 |     GET /api/user/?p=0&page_size=10
+[GIN] 2026/03/27 - 09:46:45 | api | 202603270146454272584771nP71C7e | 200 |    1.611141ms |    192.168.65.1 |     GET /api/group/
+[GIN] 2026/03/27 - 09:46:45 | api | 20260327014645427258473o0b1Sn4f | 200 |    4.343053ms |    192.168.65.1 |     GET /api/user/1
+[SYS] 2026/03/27 - 09:46:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:46:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:47:04 | api | 20260327014704105909838pZLTDTLe | 200 |     1.16198ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:47:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:47:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:47:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:47:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:47:07 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:47:12 | api | 20260327014712835079522sfs6ctSv | 200 |  115.874724ms |    192.168.65.1 |     PUT /api/user/
+[GIN] 2026/03/27 - 09:47:12 | api | 2026032701471295527270168HqFu0o | 200 |     6.56726ms |    192.168.65.1 |     GET /api/user/?p=1&page_size=10
+[GIN] 2026/03/27 - 09:47:12 | api | 20260327014712975973776e8CICtud | 200 |    3.089718ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:47:17 | api | 20260327014717240344368vBmDxd1l | 200 |    1.521538ms |    192.168.65.1 |     GET /api/user/logout
+[GIN] 2026/03/27 - 09:47:21 | api | 20260327014721630379438mUEmioZo | 200 |   97.279349ms |    192.168.65.1 |    POST /api/user/login?turnstile=
+[SYS] 2026/03/27 - 09:47:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:47:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:47:29 | api | 20260327014729106509552h0Keav5n | 200 |  108.690834ms |    192.168.65.1 |    POST /api/user/login?turnstile=
+[GIN] 2026/03/27 - 09:47:29 | api | 202603270147292811895595oVdFbsR | 200 |    7.071543ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:47:29 | api | 20260327014729281205629Ev0qrgu4 | 200 |   35.231169ms |    192.168.65.1 |     GET /api/data/?username=&start_timestamp=1774489649&end_timestamp=1774579649&default_time=hour
+[GIN] 2026/03/27 - 09:47:29 | api | 20260327014729407482637GlGG4C0d | 200 |    3.094831ms |    192.168.65.1 |     GET /api/uptime/status
+[GIN] 2026/03/27 - 09:47:34 | api | 20260327014734188516497PFaT7TO5 | 200 |     1.31407ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:47:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:47:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:47:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:47:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:48:04 | api | 202603270148042852632569FZFwYAj | 200 |    1.419479ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:48:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:48:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:48:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:48:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:48:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:48:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:48:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825306745779AjoiWlF3 | 200 |    7.780162ms |    192.168.65.1 |     GET /api/user/topup/info
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825306682660UdxKOWoq | 200 |   11.712008ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825309264310OwFZMQA2 | 200 |   35.890639ms |    192.168.65.1 |     GET /api/subscription/plans
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825306771682XIN0RL37 | 200 |   39.051292ms |    192.168.65.1 |     GET /api/user/aff
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825329858237JXmgSd4N | 200 |   15.465569ms |    192.168.65.1 |    POST /api/user/amount
+[GIN] 2026/03/27 - 09:48:25 | api | 20260327014825309264312eQS41Jdr | 200 |   51.990432ms |    192.168.65.1 |     GET /api/subscription/self
+[GIN] 2026/03/27 - 09:48:34 | api | 20260327014834368591537Lm0gzurc | 200 |     962.456µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:48:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:48:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:48:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:48:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:49:04 | api | 20260327014904447734626SNYBghgM | 200 |    1.254179ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:49:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:49:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:49:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:49:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:49:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:49:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:49:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:49:34 | api | 20260327014934542717190vnCRedzI | 200 |    1.825547ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:49:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:49:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:49:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:49:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:50:04 | api | 20260327015004619773537gRu5CFHl | 200 |     985.815µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:50:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:50:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:50:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:50:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:50:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:50:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:50:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:50:34 | api | 20260327015034704552239CHkL2HTt | 200 |    1.445143ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:50:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:50:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:50:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:50:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:51:04 | api | 20260327015104796349672Z1LXQM19 | 200 |    1.650205ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:51:07 | 正在更新数据看板数据... 
+[SYS] 2026/03/27 - 09:51:07 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/03/27 - 09:51:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:51:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:51:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:51:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:51:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:51:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:51:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:51:34 | api | 202603270151348799886912bFfDj1b | 200 |     893.973µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:51:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:51:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:51:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:51:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:52:04 | api | 202603270152049708264383eT1bCts | 200 |    1.435721ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:52:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:52:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:52:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:52:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:52:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:52:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:52:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:52:35 | api | 2026032701523562165018uo7esFx9 | 200 |    1.027857ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:52:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:52:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:52:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:52:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:53:05 | api | 20260327015305138722097uqlTZ26z | 200 |     982.843µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:53:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:53:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:53:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:53:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:53:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:53:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:53:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:53:35 | api | 20260327015335241021149J6dVX2bf | 200 |    2.376677ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:53:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:53:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:53:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:53:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:54:05 | api | 20260327015405349896518Ig9RbowA | 200 |    1.390729ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:54:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:54:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:54:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:54:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:54:07 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:54:13 | web | 20260327015413330025775cB9Yga5a | 200 |    3.521347ms |    192.168.65.1 |     GET /console/topup
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413774478793BEutzFHV | 200 |   42.447721ms |    192.168.65.1 |     GET /api/subscription/plans
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413775408856n7B5sbZX | 200 |   54.379502ms |    192.168.65.1 |     GET /api/status
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413774467751qtLSUo7k | 200 |  100.503121ms |    192.168.65.1 |     GET /api/user/topup/info
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413776140546R2Fl7cmi | 200 |  101.314251ms |    192.168.65.1 |     GET /api/subscription/self
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413770253753nBJKGiD0 | 200 |  113.083875ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413770955082zA7kGVoh | 200 |  112.431287ms |    192.168.65.1 |     GET /api/user/aff
+[GIN] 2026/03/27 - 09:54:13 | api | 20260327015413923165543MKQbsLwd | 200 |   12.026504ms |    192.168.65.1 |    POST /api/user/amount
+[GIN] 2026/03/27 - 09:54:16 | api | 20260327015416422789059jCifGQkn | 200 |    3.483112ms |    192.168.65.1 |     GET /api/user/self/groups
+[GIN] 2026/03/27 - 09:54:16 | api | 20260327015416423351664nzHc7Tyi | 200 |    8.364127ms |    192.168.65.1 |     GET /api/user/models
+[GIN] 2026/03/27 - 09:54:16 | api | 20260327015416461036530gCFoMGjH | 200 |    2.378094ms |    192.168.65.1 |     GET /api/user/self/groups
+[GIN] 2026/03/27 - 09:54:16 | api | 202603270154164610703686DopEIfY | 200 |    5.718594ms |    192.168.65.1 |     GET /api/user/models
+[SYS] 2026/03/27 - 09:54:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:54:22 | 任务进度轮询完成 
+[INFO] 2026/03/27 - 09:54:26 | 20260327015426447581488gjcgit2G | 用户 1 需要预扣费 ＄0.000674 (funding=wallet) 
+[SYS] 2026/03/27 - 09:54:27 | batch update started 
+[SYS] 2026/03/27 - 09:54:27 | batch update finished 
+[GIN] 2026/03/27 - 09:54:35 | api | 20260327015435443934728lZpwitWm | 200 |    1.205238ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:54:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:54:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:54:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:54:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:55:00 | api | 20260327015500416389834nGvbLcMX | 200 |    3.100088ms |    192.168.65.1 |     GET /api/subscription/admin/plans
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501309653204JGZnXFPT | 200 |    2.997337ms |    192.168.65.1 |     GET /api/group/
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501309644779cpoVR9nH | 200 |    7.767922ms |    192.168.65.1 |     GET /api/channel/models
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501310583608exojJX7j | 200 |     15.8684ms |    192.168.65.1 |     GET /api/user/2fa/status
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501317570261NR6KBxCw | 200 |   19.064075ms |    192.168.65.1 |     GET /api/models
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501331704963kgIfrnLd | 200 |    7.589817ms |    192.168.65.1 |     GET /api/option/
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501311418765i4OyaF6Q | 200 |   53.952238ms |    192.168.65.1 |     GET /api/user/passkey
+[GIN] 2026/03/27 - 09:55:01 | api | 20260327015501311809323xVMN6m91 | 200 |   55.809945ms |    192.168.65.1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2026/03/27 - 09:55:04 | testing channel 1 with model gpt-5.4 , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "gpt-5.4", EstimatePromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 99999663 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2026-03-27T09:55:04.590504656+08:00, FirstResponse: 2026-03-27T09:55:03.590504656+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 1, Id: 1, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.xairouter.com", ApiType: 0, ApiVersion: "", Organization: "", CreateTime: 1774518612, UpstreamModelName: "gpt-5.4", IsModelMapped: false, SupportStreamOptions: true, ApiKey: ***masked*** }, }  
+[GIN] 2026/03/27 - 09:55:05 | api | 2026032701550552172176754goupEg | 200 |     1.16875ms |             ::1 |     GET /api/status
+[ERR] 2026/03/27 - 09:55:07 | 20260327015426447581488gjcgit2G | channel error (channel #1, status code: 400): Unsupported parameter: frequency_penalty 
+[INFO] 2026/03/27 - 09:55:07 | 20260327015426447581488gjcgit2G | record error log: userId=1, channelId=1, modelName=gpt-5.4, tokenName=playground-default, content=status_code=400, Unsupported parameter: frequency_penalty 
+[INFO] 2026/03/27 - 09:55:07 | 20260327015426447581488gjcgit2G | 用户 1 请求失败, 返还预扣费（token_quota=＄0.000674, funding=wallet） 
+[ERR] 2026/03/27 - 09:55:07 | 20260327015426447581488gjcgit2G | relay error: Unsupported parameter: frequency_penalty 
+[GIN] 2026/03/27 - 09:55:07 | relay | 20260327015426447581488gjcgit2G | 400 |  40.77853278s |    192.168.65.1 |    POST /pg/chat/completions
+[SYS] 2026/03/27 - 09:55:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:55:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:55:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:55:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:55:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:55:07 | batch update started 
+[SYS] 2026/03/27 - 09:55:07 | batch update finished 
+[INFO] 2026/03/27 - 09:55:11 | SYSTEM | record consume log: userId=1, params={"channel_id":1,"prompt_tokens":1447,"completion_tokens":12,"model_name":"gpt-5.4","token_name":"模型测试","quota":1025,"content":"模型测试","token_id":0,"use_time_seconds":6,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":0.1,"cache_tokens":0,"completion_ratio":6,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.675,"request_conversion":["OpenAI Compatible"],"request_path":"/v1/chat/completions","user_group_ratio":-1}} 
+[SYS] 2026/03/27 - 09:55:11 | testing channel #1, response: 
+{"object":"chat.completion","created":1774576507,"model":"gpt-5.4","choices":[{"index":0,"message":{"role":"assistant","content":"Hi! What can I help with?"},"finish_reason":"stop"}],"usage":{"prompt_tokens":1447,"completion_tokens":12,"total_tokens":1459,"completion_tokens_details":{"reasoning_tokens":0}}} 
+[GIN] 2026/03/27 - 09:55:11 | api | 20260327015504586853302vyO9857o | 200 |  6.754659764s |    192.168.65.1 |     GET /api/channel/test/1?model=
+[SYS] 2026/03/27 - 09:55:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:55:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:55:23 | api | 20260327015523575205700wr4Dm5f | 200 |    6.090158ms |    192.168.65.1 |     GET /api/token/?p=1&size=10
+[GIN] 2026/03/27 - 09:55:23 | api | 2026032701552370146099iSptQKyI | 200 |    5.346326ms |    192.168.65.1 |    POST /api/token/1/key
+[GIN] 2026/03/27 - 09:55:27 | api | 20260327015527545196488d3pO8R4Z | 200 |    1.252645ms |    192.168.65.1 |     GET /api/notice
+[GIN] 2026/03/27 - 09:55:27 | api | 20260327015527545395968QZkYnACY | 200 |    1.231805ms |    192.168.65.1 |     GET /api/home_page_content
+[GIN] 2026/03/27 - 09:55:28 | api | 20260327015528706365173WRwitVAB | 200 |    3.288239ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:55:28 | api | 202603270155287770344559BKfV2gJ | 200 |    6.364445ms |    192.168.65.1 |     GET /api/data/?username=&start_timestamp=1774490128&end_timestamp=1774580128&default_time=hour
+[GIN] 2026/03/27 - 09:55:28 | api | 20260327015528777060210foKhofJI | 200 |    7.858132ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:55:28 | api | 20260327015528868669132LwMbz4tE | 200 |     1.55825ms |    192.168.65.1 |     GET /api/uptime/status
+[GIN] 2026/03/27 - 09:55:32 | api | 20260327015532465721194v8pfEXZD | 200 |   12.824267ms |    192.168.65.1 |     GET /api/pricing
+[GIN] 2026/03/27 - 09:55:35 | api | 20260327015535618780622F53kErCS | 200 |    1.384697ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:55:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:55:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:55:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:55:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:56:05 | api | 202603270156057069235713zf2H3c3 | 200 |    1.559649ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:56:07 | 正在更新数据看板数据... 
+[SYS] 2026/03/27 - 09:56:07 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2026/03/27 - 09:56:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:56:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:56:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:56:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:56:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:56:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:56:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:56:35 | api | 20260327015635798671461khX4FnDp | 200 |    1.705757ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:56:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:56:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:56:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:56:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:56:55 | api | 20260327015655582567852sRKMriiY | 200 |    3.922789ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:56:55 | api | 202603270156555825122820KSz0N8j | 200 |    6.021832ms |    192.168.65.1 |     GET /api/data/?username=&start_timestamp=1774490215&end_timestamp=1774580215&default_time=hour
+[GIN] 2026/03/27 - 09:56:55 | api | 20260327015655614870913N0zTdwAI | 200 |     1.80001ms |    192.168.65.1 |     GET /api/uptime/status
+[GIN] 2026/03/27 - 09:56:58 | api | 20260327015658285634030k8hU2cfP | 200 |    1.246609ms |    192.168.65.1 |     GET /api/notice
+[GIN] 2026/03/27 - 09:56:58 | api | 2026032701565828582671703sdhtzc | 200 |    1.120939ms |    192.168.65.1 |     GET /api/home_page_content
+[GIN] 2026/03/27 - 09:56:59 | api | 202603270156593545537647SC7Qa6n | 200 |    5.153794ms |    192.168.65.1 |     GET /api/data/?username=&start_timestamp=1774490219&end_timestamp=1774580219&default_time=hour
+[GIN] 2026/03/27 - 09:56:59 | api | 20260327015659354570078Pav7fyeX | 200 |    6.923168ms |    192.168.65.1 |     GET /api/user/self
+[GIN] 2026/03/27 - 09:56:59 | api | 20260327015659378366656vbda26Pw | 200 |    2.493129ms |    192.168.65.1 |     GET /api/uptime/status
+[GIN] 2026/03/27 - 09:57:00 | api | 2026032701570031623773q616QOOw | 200 |    7.088386ms |    192.168.65.1 |     GET /api/pricing
+[GIN] 2026/03/27 - 09:57:05 | api | 20260327015705962402978Iunld3zc | 200 |    1.494538ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:57:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:57:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:57:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:57:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:57:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:57:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:57:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:57:36 | api | 2026032701573647612607lOVaPAQb | 200 |     1.47107ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:57:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:57:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:57:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:57:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:58:06 | api | 20260327015806125257897SdpQjfLs | 200 |     1.15482ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:58:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:58:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:58:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:58:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:58:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:58:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:58:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:58:36 | api | 20260327015836210212843RcuMW1ZS | 200 |     993.071µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:58:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:58:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:58:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:58:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:59:06 | api | 20260327015906293100793kN7P2I2o | 200 |    1.053657ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:59:07 | syncing options from database 
+[SYS] 2026/03/27 - 09:59:07 | syncing channels from database 
+[SYS] 2026/03/27 - 09:59:07 | channels synced from database 
+[SYS] 2026/03/27 - 09:59:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:59:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:59:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:59:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 09:59:36 | api | 20260327015936372493321kTyxLToC | 200 |    1.000254ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 09:59:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:59:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 09:59:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 09:59:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:00:06 | api | 20260327020006456987556LjFTjmnR | 200 |    2.184826ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:00:07 | syncing options from database 
+[SYS] 2026/03/27 - 10:00:07 | syncing channels from database 
+[SYS] 2026/03/27 - 10:00:07 | channels synced from database 
+[SYS] 2026/03/27 - 10:00:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:00:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:00:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:00:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:00:36 | api | 20260327020036544542639JQlNPZ5Q | 200 |    1.191379ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:00:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:00:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:00:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:00:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:01:06 | api | 20260327020106624277896m0r20HEc | 200 |    1.450436ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:01:07 | 正在更新数据看板数据... 
+[SYS] 2026/03/27 - 10:01:07 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/03/27 - 10:01:07 | syncing options from database 
+[SYS] 2026/03/27 - 10:01:07 | syncing channels from database 
+[SYS] 2026/03/27 - 10:01:07 | channels synced from database 
+[SYS] 2026/03/27 - 10:01:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:01:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:01:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:01:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:01:36 | api | 20260327020136707712889EoTTkwmP | 200 |    1.076604ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:01:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:01:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:01:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:01:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:02:06 | api | 20260327020206793223330flnGlCMb | 200 |    1.356073ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:02:07 | syncing options from database 
+[SYS] 2026/03/27 - 10:02:07 | syncing channels from database 
+[SYS] 2026/03/27 - 10:02:07 | channels synced from database 
+[SYS] 2026/03/27 - 10:02:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:02:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:02:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:02:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:02:36 | api | 20260327020236884082308RmjAe53w | 200 |     741.776µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:02:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:02:37 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:02:52 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:02:52 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:03:06 | api | 20260327020306976870538PNdxizkc | 200 |     988.585µs |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:03:07 | syncing options from database 
+[SYS] 2026/03/27 - 10:03:07 | syncing channels from database 
+[SYS] 2026/03/27 - 10:03:07 | channels synced from database 
+[SYS] 2026/03/27 - 10:03:07 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:03:07 | 任务进度轮询完成 
+[SYS] 2026/03/27 - 10:03:22 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:03:22 | 任务进度轮询完成 
+[GIN] 2026/03/27 - 10:03:37 | api | 2026032702033754742826MafwuOAs | 200 |     1.23671ms |             ::1 |     GET /api/status
+[SYS] 2026/03/27 - 10:03:37 | 任务进度轮询开始 
+[SYS] 2026/03/27 - 10:03:37 | 任务进度轮询完成 
