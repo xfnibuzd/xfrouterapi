@@ -18,7 +18,7 @@ services:
   new-api:
     build:
       context: .
-      dockerfile: Dockerfile.local
+      dockerfile: Dockerfile
     image: xfrouterapi:local
     container_name: new-api
     restart: always

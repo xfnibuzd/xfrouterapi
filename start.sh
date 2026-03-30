@@ -343,14 +343,8 @@ start_prod() {
         return 0
     fi
     
-    # 检查镜像
-    if ! docker images | grep -q "xfrouterapi:local"; then
-        log_warning "未找到本地镜像，开始构建..."
-        ./build.sh docker
-    fi
-    
-    # 启动容器
-    log_info "启动 Docker 容器..."
+    # 启动容器时强制重新构建并重建，避免复用旧镜像/旧容器
+    log_info "启动 Docker 容器并强制重建镜像..."
     
     # 修改端口映射 (如果需要)
     if [ "$port" != "3000" ]; then
@@ -358,7 +352,7 @@ start_prod() {
         # 这里可以动态修改 docker-compose.yml 或使用环境变量
     fi
     
-    docker compose up -d
+    docker compose up -d --build --force-recreate
     
     # 等待服务启动
     log_info "等待服务启动..."
@@ -392,8 +386,8 @@ start_docker() {
         exit 1
     fi
     
-    # 启动容器
-    docker compose up -d
+    # 启动容器时强制重新构建并重建，避免复用旧镜像/旧容器
+    docker compose up -d --build --force-recreate
     
     # 等待启动
     sleep 3

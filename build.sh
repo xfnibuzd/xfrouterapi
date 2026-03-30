@@ -148,7 +148,7 @@ build_docker() {
         proxy_args="--build-arg HTTP_PROXY=$DOCKER_BUILD_PROXY --build-arg HTTPS_PROXY=$DOCKER_BUILD_PROXY"
     fi
     
-    # 构建镜像
+    # 构建镜像（Dockerfile 会在镜像内构建前端，避免依赖宿主机的 web/dist）
     docker compose build $proxy_args new-api
     
     log_success "Docker 镜像构建完成: xfrouterapi:local"
@@ -198,7 +198,6 @@ prod_build() {
     
     check_dependencies "prod"
     setup_proxy
-    build_frontend
     build_docker
     start_services
     

@@ -7,7 +7,7 @@ GREEN := \033[0;32m
 YELLOW := \033[1;33m
 NC := \033[0m
 
-.PHONY: all build dev prod docker clean help frontend backend test stop restart status start
+.PHONY: all build dev prod docker clean help frontend backend test stop restart status start refresh
 
 # 默认目标
 all: build
@@ -68,6 +68,11 @@ start:
 # 启动生产环境
 start-prod:
 	@echo "$(YELLOW)[START-PROD]$(NC) 启动生产环境..."
+	@./start.sh prod
+
+# 一键刷新（重建并启动）
+refresh:
+	@echo "$(YELLOW)[REFRESH]$(NC) 重建并启动服务..."
 	@./start.sh prod
 
 # 启动 Docker
@@ -135,6 +140,7 @@ help:
 	@echo "启动命令:"
 	@echo "  make start       - 启动开发环境"
 	@echo "  make start-prod  - 启动生产环境"
+	@echo "  make refresh     - 重建并启动服务"
 	@echo "  make start-docker- 启动 Docker 容器"
 	@echo "  make start-backend- 仅启动后端"
 	@echo "  make start-frontend- 仅启动前端"

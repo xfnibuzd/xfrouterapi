@@ -88,22 +88,6 @@ const SiderBar = ({ onNavigate = () => {} }) => {
         itemKey: 'log',
         to: '/log',
       },
-      {
-        text: t('绘图日志'),
-        itemKey: 'midjourney',
-        to: '/midjourney',
-        className:
-          localStorage.getItem('enable_drawing') === 'true'
-            ? ''
-            : 'tableHiddle',
-      },
-      {
-        text: t('任务日志'),
-        itemKey: 'task',
-        to: '/task',
-        className:
-          localStorage.getItem('enable_task') === 'true' ? '' : 'tableHiddle',
-      },
     ];
 
     // 根据配置过滤项目
@@ -115,8 +99,6 @@ const SiderBar = ({ onNavigate = () => {} }) => {
     return filteredItems;
   }, [
     localStorage.getItem('enable_data_export'),
-    localStorage.getItem('enable_drawing'),
-    localStorage.getItem('enable_task'),
     t,
     isModuleVisible,
   ]);
@@ -200,27 +182,9 @@ const SiderBar = ({ onNavigate = () => {} }) => {
   }, [isAdmin(), isRoot(), t, isModuleVisible]);
 
   const chatMenuItems = useMemo(() => {
-    const items = [
-      {
-        text: t('操练场'),
-        itemKey: 'playground',
-        to: '/playground',
-      },
-      {
-        text: t('聊天'),
-        itemKey: 'chat',
-        items: chatItems,
-      },
-    ];
-
-    // 根据配置过滤项目
-    const filteredItems = items.filter((item) => {
-      const configVisible = isModuleVisible('chat', item.itemKey);
-      return configVisible;
-    });
-
-    return filteredItems;
-  }, [chatItems, t, isModuleVisible]);
+    // 普通用户不显示聊天菜单
+    return [];
+  }, []);
 
   // 更新路由映射，添加聊天路由
   const updateRouterMapWithChats = (chats) => {
@@ -438,16 +402,6 @@ const SiderBar = ({ onNavigate = () => {} }) => {
             setOpenedKeys(data.openKeys);
           }}
         >
-          {/* 聊天区域 */}
-          {hasSectionVisibleModules('chat') && (
-            <div className='sidebar-section'>
-              {!collapsed && (
-                <div className='sidebar-group-label'>{t('聊天')}</div>
-              )}
-              {chatMenuItems.map((item) => renderSubItem(item))}
-            </div>
-          )}
-
           {/* 控制台区域 */}
           {hasSectionVisibleModules('console') && (
             <>
