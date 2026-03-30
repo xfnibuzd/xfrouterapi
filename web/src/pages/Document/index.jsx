@@ -212,11 +212,13 @@ const response = await client.chat.completions.create({
           boxShadow: 'var(--semi-shadow-elevated)',
         }}
       >
-        <div 
-          className="markdown-body" 
-          style={{ padding: '20px' }}
-          dangerouslySetInnerHTML={{ __html: htmlContent }} 
-        />
+        <div className='mt-[80px] px-2'>
+          <div 
+            className="markdown-body" 
+            style={{ padding: '20px' }}
+            dangerouslySetInnerHTML={{ __html: htmlContent }} 
+          />
+        </div>
       </Content>
     </Layout>
   );

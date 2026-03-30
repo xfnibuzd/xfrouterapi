@@ -139,7 +139,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className='docs-page-shell mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 py-6 lg:py-8 space-y-6'>
+    <div className='docs-page-shell mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 pt-0 pb-6 lg:pt-0 lg:pb-8 space-y-6'>
       <DashboardHeader
         getGreeting={dashboardData.getGreeting}
         greetingVisible={dashboardData.greetingVisible}
