@@ -19,6 +19,7 @@ For commercial licensing, please contact support@quantumnous.com
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SkeletonWrapper from '../components/SkeletonWrapper';
 
 const Navigation = ({
@@ -28,11 +29,33 @@ const Navigation = ({
   userState,
   pricingRequireAuth,
 }) => {
+  const { pathname } = useLocation();
+
+  const isLinkActive = (link) => {
+    if (link.isExternal) return false;
+
+    if (link.itemKey === 'console') {
+      return pathname.startsWith('/console');
+    }
+
+    if (link.itemKey === 'docs') {
+      return pathname.startsWith('/docs');
+    }
+
+    if (link.itemKey === 'about') {
+      return pathname.startsWith('/about');
+    }
+
+    return pathname === link.to;
+  };
+
   const renderNavLinks = () => {
     const commonLinkClasses = 'docs-topbar-link';
 
     return mainNavLinks.map((link) => {
       const linkContent = <span>{link.text}</span>;
+      const active = isLinkActive(link);
+      const linkClasses = `${commonLinkClasses}${active ? ' docs-topbar-link-active' : ''}`;
 
       if (link.isExternal) {
         return (
@@ -41,7 +64,7 @@ const Navigation = ({
             href={link.externalLink}
             target='_blank'
             rel='noopener noreferrer'
-            className={commonLinkClasses}
+            className={linkClasses}
           >
             {linkContent}
           </a>
@@ -57,7 +80,7 @@ const Navigation = ({
       }
 
       return (
-        <Link key={link.itemKey} to={targetPath} className={commonLinkClasses}>
+        <Link key={link.itemKey} to={targetPath} className={linkClasses}>
           {linkContent}
         </Link>
       );

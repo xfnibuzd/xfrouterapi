@@ -348,6 +348,17 @@ body[theme-mode='dark'] .sidebar-nav-item:hover {
   color: #ffffff;
 }
 
+.docs-topbar-link-active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.docs-topbar-link-active:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
 .docs-topbar-actions {
   display: flex;
   align-items: center;
