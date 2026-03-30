@@ -43,7 +43,6 @@ const routerMap = {
   setting: '/console/setting',
   about: '/about',
   detail: '/console',
-  pricing: '/pricing',
   task: '/console/task',
   models: '/console/models',
   deployment: '/console/deployment',

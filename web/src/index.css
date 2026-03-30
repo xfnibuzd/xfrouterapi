@@ -15,9 +15,18 @@
 
 /* ==================== 全局基础样式 ==================== */
 :root {
-  --sidebar-width: 180px;
-  --sidebar-width-collapsed: 60px;
+  --sidebar-width: 220px;
+  --sidebar-width-collapsed: 70px;
   --sidebar-current-width: var(--sidebar-width);
+  --apple-glass-bg: rgba(255, 255, 255, 0.7);
+  --apple-glass-border: rgba(0, 0, 0, 0.05);
+  --apple-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+body[theme-mode='dark'] {
+  --apple-glass-bg: rgba(28, 28, 30, 0.7);
+  --apple-glass-border: rgba(255, 255, 255, 0.1);
+  --apple-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 body.sidebar-collapsed {
@@ -25,10 +34,29 @@ body.sidebar-collapsed {
 }
 
 body {
-  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, 'Microsoft YaHei',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--semi-color-text-0);
   background-color: var(--semi-color-bg-0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 覆盖 Semi UI 的默认圆角，实现苹果风格的圆润感 */
+body {
+  --semi-border-radius-small: 6px;
+  --semi-border-radius-medium: 12px;
+  --semi-border-radius-large: 16px;
+  --semi-border-radius-extra-large: 24px;
+}
+
+/* 增强卡片、弹窗的毛玻璃效果 */
+.semi-card, .semi-modal-content, .semi-popover {
+  background: var(--apple-glass-bg) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--apple-glass-border);
+  box-shadow: var(--apple-glass-shadow) !important;
+  border-radius: var(--semi-border-radius-large) !important;
 }
 
 .app-layout {
@@ -118,14 +146,17 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  transition: width 0.3s ease;
-  background: var(--semi-color-bg-0);
+  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: var(--apple-glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--apple-glass-border);
 }
 
 .sidebar-nav {
   flex: 1;
   width: 100%;
-  background: var(--semi-color-bg-0);
+  background: transparent;
   height: 100%;
   overflow-x: hidden;
   border-right: none;
@@ -142,59 +173,34 @@ code {
 
 /* 侧边栏导航项样式 */
 .sidebar-nav-item {
-  border-radius: 6px;
-  margin: 3px 8px;
-  transition: all 0.15s ease;
-  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 4px 12px;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  padding: 10px 14px;
 }
 
 .sidebar-nav-item:hover {
-  background-color: rgba(var(--semi-blue-0), 0.08);
-  color: var(--semi-color-primary);
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: scale(0.98);
+}
+
+body[theme-mode='dark'] .sidebar-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-nav-item-selected {
-  background-color: rgba(var(--semi-blue-0), 0.12);
-  color: var(--semi-color-primary);
+  background-color: var(--semi-color-primary) !important;
+  color: #ffffff !important;
   font-weight: 500;
+  box-shadow: 0 2px 8px rgba(var(--semi-blue-5), 0.3);
 }
 
-/* 图标容器样式 */
-.sidebar-icon-container {
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  transition: all 0.2s ease;
+.sidebar-nav-item-selected .semi-navigation-item-text span {
+  color: #ffffff !important;
 }
 
-.sidebar-sub-icon-container {
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  margin-left: 1px;
-  transition: all 0.2s ease;
-}
-
-/* 分割线样式 */
-.sidebar-divider {
-  margin: 4px 8px;
-  opacity: 0.15;
-}
-
-/* 分组标签样式 */
-.sidebar-group-label {
-  padding: 4px 15px 8px;
-  color: var(--semi-color-text-2);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.8;
+.sidebar-nav-item-selected .sidebar-icon-container svg {
+  color: #ffffff !important;
 }
 
 /* 底部折叠按钮 */
@@ -202,16 +208,14 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 16px;
   margin-top: auto;
   cursor: pointer;
-  background-color: var(--semi-color-bg-0);
+  background-color: transparent;
   position: sticky;
   bottom: 0;
   z-index: 10;
-  box-shadow: 0 -10px 10px -5px var(--semi-color-bg-0);
-  backdrop-filter: blur(4px);
-  border-top: 1px solid rgba(var(--semi-grey-0), 0.08);
+  border-top: 1px solid var(--apple-glass-border);
 }
 
 .sidebar-collapse-button-inner {
