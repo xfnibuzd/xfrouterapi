@@ -17,8 +17,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 For commercial licensing, please contact support@quantumnous.com
 */
 
-import React, { lazy, Suspense, useContext, useMemo } from 'react';
-import { Route, Routes, useLocation, useParams, Navigate } from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
+import { Route, Routes, useLocation, useParams } from 'react-router-dom';
 import Loading from './components/common/ui/Loading';
 import User from './pages/User';
 import { AuthRedirect, PrivateRoute, AdminRoute } from './helpers';
@@ -27,8 +27,6 @@ import LoginForm from './components/auth/LoginForm';
 import NotFound from './pages/NotFound';
 import Forbidden from './pages/Forbidden';
 import Setting from './pages/Setting';
-import { UserContext } from './context/User';
-import { StatusContext } from './context/Status';
 
 import PasswordResetForm from './components/auth/PasswordResetForm';
 import PasswordResetConfirm from './components/auth/PasswordResetConfirm';
@@ -53,6 +51,7 @@ import SetupCheck from './components/layout/SetupCheck';
 const DocumentPage = lazy(() => import('./pages/Document'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const About = lazy(() => import('./pages/About'));
+const Official = lazy(() => import('./pages/Official'));
 const UserAgreement = lazy(() => import('./pages/UserAgreement'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
@@ -63,15 +62,6 @@ function DynamicOAuth2Callback() {
 
 function App() {
   const location = useLocation();
-  const [statusState] = useContext(StatusContext);
-  const [userState] = useContext(UserContext);
-
-  const HomeRedirect = () => {
-    if (userState?.user) {
-      return <Navigate to="/console" replace />;
-    }
-    return <Navigate to="/login" replace />;
-  };
 
   return (
     <SetupCheck>
@@ -80,7 +70,15 @@ function App() {
           path='/'
           element={
             <Suspense fallback={<Loading></Loading>} key={location.pathname}>
-              <HomeRedirect />
+              <Official />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/official'
+          element={
+            <Suspense fallback={<Loading></Loading>} key={location.pathname}>
+              <Official />
             </Suspense>
           }
         />
