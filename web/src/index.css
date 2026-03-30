@@ -322,6 +322,11 @@ body[theme-mode='dark'] .sidebar-nav-item:hover {
   color: #ffffff;
 }
 
+.docs-topbar-brand .semi-typography,
+.docs-topbar-brand .semi-typography-title {
+  color: #ffffff !important;
+}
+
 .docs-topbar-nav {
   flex: 1;
   min-width: 0;
