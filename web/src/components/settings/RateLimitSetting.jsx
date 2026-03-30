@@ -78,7 +78,7 @@ const RateLimitSetting = () => {
     <>
       <Spin spinning={loading} size='large'>
         {/* AI请求速率限制 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <RequestRateLimit options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

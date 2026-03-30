@@ -281,7 +281,7 @@ export default function SettingsSidebarModulesAdmin(props) {
   ];
 
   return (
-    <Card>
+    <Card className='docs-card'>
       <Form.Section
         text={t('侧边栏管理（全局控制）')}
         extraText={t(
@@ -298,9 +298,9 @@ export default function SettingsSidebarModulesAdmin(props) {
                 alignItems: 'center',
                 marginBottom: '16px',
                 padding: '12px 16px',
-                backgroundColor: 'var(--semi-color-fill-0)',
+                backgroundColor: 'var(--docs-surface-strong)',
                 borderRadius: '8px',
-                border: '1px solid var(--semi-color-border)',
+                border: '1px solid var(--docs-border)',
               }}
             >
               <div>
@@ -308,7 +308,7 @@ export default function SettingsSidebarModulesAdmin(props) {
                   style={{
                     fontWeight: '600',
                     fontSize: '16px',
-                    color: 'var(--semi-color-text-0)',
+                    color: 'var(--docs-text)',
                     marginBottom: '4px',
                   }}
                 >
@@ -319,7 +319,7 @@ export default function SettingsSidebarModulesAdmin(props) {
                   size='small'
                   style={{
                     fontSize: '12px',
-                    color: 'var(--semi-color-text-2)',
+                    color: 'var(--docs-muted)',
                     lineHeight: '1.4',
                   }}
                 >
@@ -338,9 +338,11 @@ export default function SettingsSidebarModulesAdmin(props) {
               {section.modules.map((module) => (
                 <Col key={module.key} xs={24} sm={12} md={8} lg={6} xl={6}>
                   <Card
+                    className='docs-card'
                     bodyStyle={{ padding: '16px' }}
                     hoverable
                     style={{
+                      border: '1px solid var(--docs-border)',
                       opacity: sidebarModulesAdmin[section.key]?.enabled
                         ? 1
                         : 0.5,
@@ -360,7 +362,7 @@ export default function SettingsSidebarModulesAdmin(props) {
                           style={{
                             fontWeight: '600',
                             fontSize: '14px',
-                            color: 'var(--semi-color-text-0)',
+                            color: 'var(--docs-text)',
                             marginBottom: '4px',
                           }}
                         >
@@ -371,7 +373,7 @@ export default function SettingsSidebarModulesAdmin(props) {
                           size='small'
                           style={{
                             fontSize: '12px',
-                            color: 'var(--semi-color-text-2)',
+                            color: 'var(--docs-muted)',
                             lineHeight: '1.4',
                             display: 'block',
                           }}
@@ -404,7 +406,7 @@ export default function SettingsSidebarModulesAdmin(props) {
             justifyContent: 'flex-start',
             alignItems: 'center',
             paddingTop: '8px',
-            borderTop: '1px solid var(--semi-color-border)',
+            borderTop: '1px solid var(--docs-border)',
           }}
         >
           <Button

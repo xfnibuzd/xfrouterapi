@@ -120,36 +120,36 @@ const PreferencesSettings = ({ t }) => {
 	};
 
 	return (
-		<Card className="!rounded-2xl shadow-sm border-0">
+		<Card className="docs-card">
 			{/* Card Header */}
 			<div className="flex items-center mb-4">
-				<Avatar size="small" color="violet" className="mr-3 shadow-md">
+				<Avatar size="small" color="violet" className="mr-3">
 					<Languages size={16} />
 				</Avatar>
 				<div>
 					<Typography.Text className="text-lg font-medium">
 						{t("偏好设置")}
 					</Typography.Text>
-					<div className="text-xs text-gray-600 dark:text-gray-400">
+					<div className="text-xs text-[var(--docs-muted)]">
 						{t("界面语言和其他个人偏好")}
 					</div>
 				</div>
 			</div>
 			{/* Language Setting Card */}
-			<Card className="!rounded-xl border dark:border-gray-700">
+			<Card className="docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]">
 				<div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-4">
 					<div className="flex items-start w-full sm:w-auto">
-						<div className="w-12 h-12 rounded-full bg-violet-50 dark:bg-violet-900/30 flex items-center justify-center mr-4 flex-shrink-0">
+						<div className="w-12 h-12 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-4 flex-shrink-0">
 							<Languages
 								size={20}
-								className="text-violet-600 dark:text-violet-400"
+								className="text-[var(--docs-primary)]"
 							/>
 						</div>
 						<div>
-							<Typography.Title heading={6} className="mb-1">
+							<Typography.Title heading={6} className="mb-1 text-[var(--docs-text)]">
 								{t("语言偏好")}
 							</Typography.Title>
-							<Typography.Text type="tertiary" className="text-sm">
+							<Typography.Text className="text-sm text-[var(--docs-muted)]">
 								{t("选择您的首选界面语言，设置将自动保存并同步到所有设备")}
 							</Typography.Text>
 						</div>
@@ -168,8 +168,8 @@ const PreferencesSettings = ({ t }) => {
 			</Card>
 
 			{/* Additional info */}
-			<div className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-				<Typography.Text type="tertiary">
+			<div className="mt-4 text-xs text-[var(--docs-muted)]">
+				<Typography.Text className="text-[var(--docs-muted)]">
 					{t(
 						"提示：语言偏好会同步到您登录的所有设备，并影响API返回的错误消息语言。",
 					)}

@@ -96,7 +96,7 @@ const RatioSetting = () => {
   return (
     <Spin spinning={loading} size='large'>
       {/* 模型倍率设置以及价格编辑器 */}
-      <Card style={{ marginTop: '10px' }}>
+      <Card className='docs-card' style={{ marginTop: '10px' }}>
         <Tabs type='card' defaultActiveKey='visual'>
           <Tabs.TabPane tab={t('模型倍率设置')} itemKey='model'>
             <ModelRatioSettings options={inputs} refresh={onRefresh} />

@@ -76,6 +76,7 @@ const SettingsFAQ = ({ options, refresh }) => {
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
               fontWeight: 'bold',
+              color: 'var(--docs-text)',
             }}
           >
             {text}
@@ -95,7 +96,7 @@ const SettingsFAQ = ({ options, refresh }) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-              color: 'var(--semi-color-text-1)',
+              color: 'var(--docs-muted)',
             }}
           >
             {text}
@@ -308,9 +309,9 @@ const SettingsFAQ = ({ options, refresh }) => {
   const renderHeader = () => (
     <div className='flex flex-col w-full'>
       <div className='mb-2'>
-        <div className='flex items-center text-blue-500'>
+        <div className='flex items-center text-[var(--docs-primary)]'>
           <HelpCircle size={16} className='mr-2' />
-          <Text>
+          <Text className='text-[var(--docs-muted)]'>
             {t(
               '常见问答管理，为用户提供常见问题的答案（最多50个，前端显示最新20条）',
             )}
@@ -357,7 +358,7 @@ const SettingsFAQ = ({ options, refresh }) => {
         {/* 启用开关 */}
         <div className='order-1 md:order-2 flex items-center gap-2'>
           <Switch checked={panelEnabled} onChange={handleToggleEnabled} />
-          <Text>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
+          <Text className='text-[var(--docs-text)]'>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
         </div>
       </div>
     </div>

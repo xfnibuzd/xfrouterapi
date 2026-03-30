@@ -50,13 +50,13 @@ const THEME_COLORS = {
 
 const COMPONENT_STYLES = {
   tag: {
-    backgroundColor: 'rgba(255,255,255,0.95)',
-    color: '#1f2937',
-    border: '1px solid rgba(255,255,255,0.8)',
+    backgroundColor: 'var(--docs-surface)',
+    color: 'var(--docs-text)',
+    border: '1px solid var(--docs-border)',
     fontWeight: '500',
   },
   avatarContainer:
-    'w-16 h-16 rounded-2xl bg-white/90 shadow-md backdrop-blur-sm flex items-center justify-center',
+    'w-16 h-16 rounded-2xl bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center',
   titleText: { color: 'white' },
   descriptionText: { color: 'rgba(255,255,255,0.9)' },
 };
@@ -320,7 +320,7 @@ const PricingVendorIntro = memo(
     const renderHeaderCard = useCallback(
       ({ title, count, description, rightContent, primaryDarkerChannel }) => (
         <Card
-          className='!rounded-2xl shadow-sm border-0'
+          className='docs-card'
           cover={
             <div
               className='relative h-full'

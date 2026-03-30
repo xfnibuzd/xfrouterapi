@@ -69,7 +69,7 @@ const SettingsUptimeKuma = ({ options, refresh }) => {
         <div
           style={{
             fontWeight: 'bold',
-            color: 'var(--semi-color-text-0)',
+            color: 'var(--docs-text)',
           }}
         >
           {text}
@@ -86,7 +86,7 @@ const SettingsUptimeKuma = ({ options, refresh }) => {
             maxWidth: '300px',
             wordBreak: 'break-all',
             fontFamily: 'monospace',
-            color: 'var(--semi-color-primary)',
+            color: 'var(--docs-primary)',
           }}
         >
           {text}
@@ -101,7 +101,7 @@ const SettingsUptimeKuma = ({ options, refresh }) => {
         <div
           style={{
             fontFamily: 'monospace',
-            color: 'var(--semi-color-text-1)',
+            color: 'var(--docs-muted)',
           }}
         >
           {text}
@@ -330,9 +330,9 @@ const SettingsUptimeKuma = ({ options, refresh }) => {
   const renderHeader = () => (
     <div className='flex flex-col w-full'>
       <div className='mb-2'>
-        <div className='flex items-center text-blue-500'>
+        <div className='flex items-center text-[var(--docs-primary)]'>
           <Activity size={16} className='mr-2' />
-          <Text>
+          <Text className='text-[var(--docs-muted)]'>
             {t(
               'Uptime Kuma监控分类管理，可以配置多个监控分类用于服务状态展示（最多20个）',
             )}
@@ -379,7 +379,7 @@ const SettingsUptimeKuma = ({ options, refresh }) => {
         {/* 启用开关 */}
         <div className='order-1 md:order-2 flex items-center gap-2'>
           <Switch checked={panelEnabled} onChange={handleToggleEnabled} />
-          <Text>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
+          <Text className='text-[var(--docs-text)]'>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
         </div>
       </div>
     </div>

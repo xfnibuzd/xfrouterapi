@@ -142,27 +142,27 @@ const DashboardSetting = () => {
         </Modal>
 
         {/* 数据看板设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsDataDashboard options={inputs} refresh={onRefresh} />
         </Card>
 
         {/* 系统公告管理 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsAnnouncements options={inputs} refresh={onRefresh} />
         </Card>
 
         {/* API信息管理 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsAPIInfo options={inputs} refresh={onRefresh} />
         </Card>
 
         {/* 常见问答管理 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsFAQ options={inputs} refresh={onRefresh} />
         </Card>
 
         {/* Uptime Kuma 监控设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsUptimeKuma options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

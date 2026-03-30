@@ -71,7 +71,7 @@ const ChatsSetting = () => {
     <>
       <Spin spinning={loading} size='large'>
         {/* 聊天设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsChats options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

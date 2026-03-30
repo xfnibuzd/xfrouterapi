@@ -132,19 +132,19 @@ const PaymentSetting = () => {
   return (
     <>
       <Spin spinning={loading} size='large'>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsGeneralPayment options={inputs} refresh={onRefresh} />
         </Card>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsPaymentGateway options={inputs} refresh={onRefresh} />
         </Card>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsPaymentGatewayStripe options={inputs} refresh={onRefresh} />
         </Card>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsPaymentGatewayCreem options={inputs} refresh={onRefresh} />
         </Card>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsPaymentGatewayWaffo options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

@@ -191,7 +191,7 @@ export default function SettingsHeaderNavModules(props) {
   ];
 
   return (
-    <Card>
+    <Card className='docs-card'>
       <Form.Section
         text={t('顶栏管理')}
         extraText={t('控制顶栏模块显示状态，全局生效')}
@@ -200,11 +200,12 @@ export default function SettingsHeaderNavModules(props) {
           {moduleConfigs.map((module) => (
             <Col key={module.key} xs={24} sm={12} md={6} lg={6} xl={6}>
               <Card
+                className='docs-card'
                 style={{
                   borderRadius: '8px',
-                  border: '1px solid var(--semi-color-border)',
+                  border: '1px solid var(--docs-border)',
                   transition: 'all 0.2s ease',
-                  background: 'var(--semi-color-bg-1)',
+                  background: 'var(--docs-surface-strong)',
                   minHeight: '80px',
                 }}
                 bodyStyle={{ padding: '16px' }}
@@ -223,7 +224,7 @@ export default function SettingsHeaderNavModules(props) {
                       style={{
                         fontWeight: '600',
                         fontSize: '14px',
-                        color: 'var(--semi-color-text-0)',
+                        color: 'var(--docs-text)',
                         marginBottom: '4px',
                       }}
                     >
@@ -234,7 +235,7 @@ export default function SettingsHeaderNavModules(props) {
                       size='small'
                       style={{
                         fontSize: '12px',
-                        color: 'var(--semi-color-text-2)',
+                        color: 'var(--docs-muted)',
                         lineHeight: '1.4',
                         display: 'block',
                       }}
@@ -262,7 +263,7 @@ export default function SettingsHeaderNavModules(props) {
                     : headerNavModules[module.key]) && (
                     <div
                       style={{
-                        borderTop: '1px solid var(--semi-color-border)',
+                        borderTop: '1px solid var(--docs-border)',
                         marginTop: '12px',
                         paddingTop: '12px',
                       }}
@@ -279,7 +280,7 @@ export default function SettingsHeaderNavModules(props) {
                             style={{
                               fontWeight: '500',
                               fontSize: '12px',
-                              color: 'var(--semi-color-text-1)',
+                              color: 'var(--docs-text)',
                               marginBottom: '2px',
                             }}
                           >
@@ -290,7 +291,7 @@ export default function SettingsHeaderNavModules(props) {
                             size='small'
                             style={{
                               fontSize: '11px',
-                              color: 'var(--semi-color-text-2)',
+                              color: 'var(--docs-muted)',
                               lineHeight: '1.4',
                               display: 'block',
                             }}
@@ -322,7 +323,7 @@ export default function SettingsHeaderNavModules(props) {
             justifyContent: 'flex-start',
             alignItems: 'center',
             paddingTop: '8px',
-            borderTop: '1px solid var(--semi-color-border)',
+            borderTop: '1px solid var(--docs-border)',
           }}
         >
           <Button

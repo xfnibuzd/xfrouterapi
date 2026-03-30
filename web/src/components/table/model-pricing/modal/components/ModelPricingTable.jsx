@@ -86,7 +86,7 @@ const ModelPricingTable = ({
         title: t('分组'),
         dataIndex: 'group',
         render: (text) => (
-          <Tag color='white' size='small' shape='circle'>
+          <Tag color='white' size='small' shape='circle' className='border border-[var(--docs-border)] !bg-[var(--docs-surface)] text-[var(--docs-text)]'>
             {text}
             {t('分组')}
           </Tag>
@@ -100,7 +100,7 @@ const ModelPricingTable = ({
         title: t('倍率'),
         dataIndex: 'ratio',
         render: (text) => (
-          <Tag color='white' size='small' shape='circle'>
+          <Tag color='white' size='small' shape='circle' className='border border-[var(--docs-border)] !bg-[var(--docs-surface)] text-[var(--docs-text)]'>
             {text}x
           </Tag>
         ),
@@ -130,10 +130,10 @@ const ModelPricingTable = ({
         <div className='space-y-1'>
           {items.map((item) => (
             <div key={item.key}>
-              <div className='font-semibold text-orange-600'>
+              <div className='font-semibold text-[var(--docs-primary)]'>
                 {item.label} {item.value}
               </div>
-              <div className='text-xs text-gray-500'>{item.suffix}</div>
+              <div className='text-xs text-[var(--docs-muted)]'>{item.suffix}</div>
             </div>
           ))}
         </div>
@@ -153,29 +153,29 @@ const ModelPricingTable = ({
   };
 
   return (
-    <Card className='!rounded-2xl shadow-sm border-0'>
+    <Card className='docs-card'>
       <div className='flex items-center mb-4'>
-        <Avatar size='small' color='orange' className='mr-2 shadow-md'>
+        <Avatar size='small' color='orange' className='mr-2'>
           <IconCoinMoneyStroked size={16} />
         </Avatar>
         <div>
-          <Text className='text-lg font-medium'>{t('分组价格')}</Text>
-          <div className='text-xs text-gray-600'>
+          <Text className='text-lg font-medium text-[var(--docs-text)]'>{t('分组价格')}</Text>
+          <div className='text-xs text-[var(--docs-muted)]'>
             {t('不同用户分组的价格信息')}
           </div>
         </div>
       </div>
       {autoChain.length > 0 && (
         <div className='flex flex-wrap items-center gap-1 mb-4'>
-          <span className='text-sm text-gray-600'>{t('auto分组调用链路')}</span>
-          <span className='text-sm'>→</span>
+          <span className='text-sm text-[var(--docs-muted)]'>{t('auto分组调用链路')}</span>
+          <span className='text-sm text-[var(--docs-text)]'>→</span>
           {autoChain.map((g, idx) => (
             <React.Fragment key={g}>
-              <Tag color='white' size='small' shape='circle'>
+              <Tag color='white' size='small' shape='circle' className='border border-[var(--docs-border)] !bg-[var(--docs-surface)] text-[var(--docs-text)]'>
                 {g}
                 {t('分组')}
               </Tag>
-              {idx < autoChain.length - 1 && <span className='text-sm'>→</span>}
+              {idx < autoChain.length - 1 && <span className='text-sm text-[var(--docs-text)]'>→</span>}
             </React.Fragment>
           ))}
         </div>

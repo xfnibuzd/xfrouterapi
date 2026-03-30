@@ -325,8 +325,8 @@ export default function SettingsChannelAffinity(props) {
               lineHeight: 1.6,
               padding: 10,
               borderRadius: 8,
-              background: 'var(--semi-color-fill-0)',
-              border: '1px solid var(--semi-color-border)',
+              background: 'var(--docs-surface-strong)',
+              border: '1px solid var(--docs-border)',
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-all',
             }}
@@ -1195,8 +1195,8 @@ export default function SettingsChannelAffinity(props) {
                       marginTop: 8,
                       borderRadius: 10,
                       padding: 10,
-                      background: 'var(--semi-color-fill-0)',
-                      border: '1px solid var(--semi-color-border)',
+                      background: 'var(--docs-surface-strong)',
+                      border: '1px solid var(--docs-border)',
                     }}
                   >
                     <div

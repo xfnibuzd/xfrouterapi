@@ -25,7 +25,7 @@ const { Paragraph } = Typography;
 
 const CARD_STYLES = {
   container:
-    'w-12 h-12 rounded-2xl flex items-center justify-center relative shadow-md',
+    'w-12 h-12 rounded-2xl flex items-center justify-center relative border border-[var(--docs-border)] bg-[var(--docs-surface)]',
   icon: 'w-8 h-8 flex items-center justify-center',
 };
 
@@ -78,13 +78,13 @@ const ModelHeader = ({ modelData, vendorsMap = {}, t }) => {
       {getModelIcon()}
       <div className='ml-3 font-normal'>
         <Paragraph
-          className='!mb-0 !text-lg !font-medium'
+          className='!mb-0 !text-lg !font-medium !text-[var(--docs-text)]'
           copyable={{
             content: modelData?.model_name || '',
             onCopy: () => Toast.success({ content: t('已复制模型名称') }),
           }}
         >
-          <span className='truncate max-w-60 font-bold'>
+          <span className='truncate max-w-60 font-bold text-[var(--docs-text)]'>
             {modelData?.model_name || t('未知模型')}
           </span>
         </Paragraph>

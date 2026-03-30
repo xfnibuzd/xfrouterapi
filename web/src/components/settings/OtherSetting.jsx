@@ -326,7 +326,7 @@ const OtherSetting = () => {
       >
         {/* 版本信息 */}
         <Form>
-          <Card>
+          <Card className='docs-card'>
             <Form.Section text={t('系统信息')}>
               <Row>
                 <Col span={16}>
@@ -360,7 +360,7 @@ const OtherSetting = () => {
           values={inputs}
           getFormApi={(formAPI) => (formAPISettingGeneral.current = formAPI)}
         >
-          <Card>
+          <Card className='docs-card'>
             <Form.Section text={t('通用设置')}>
               <Form.TextArea
                 label={t('公告')}
@@ -421,7 +421,7 @@ const OtherSetting = () => {
           values={inputs}
           getFormApi={(formAPI) => (formAPIPersonalization.current = formAPI)}
         >
-          <Card>
+          <Card className='docs-card'>
             <Form.Section text={t('个性化设置')}>
               <Form.Input
                 label={t('系统名称')}

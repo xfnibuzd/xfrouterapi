@@ -193,10 +193,10 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
           position='top'
         >
           <div className='absolute inset-0 flex flex-col items-center justify-center cursor-pointer'>
-            <div className='w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mb-0.5 shadow-sm'>
+            <div className='w-6 h-6 rounded-full bg-[var(--docs-primary)] flex items-center justify-center mb-0.5'>
               <Check size={14} className='text-white' strokeWidth={3} />
             </div>
-            <div className='text-[10px] font-medium text-green-600 dark:text-green-400 leading-none'>
+            <div className='text-[10px] font-medium text-[var(--docs-primary-strong)] leading-none'>
               {renderQuota(quotaAwarded)}
             </div>
           </div>
@@ -213,7 +213,7 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
   };
 
   return (
-    <Card className='!rounded-2xl'>
+    <Card className='docs-card'>
       <Modal
         title='Security Check'
         visible={turnstileModalVisible}
@@ -244,21 +244,21 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
           className='flex items-center flex-1 cursor-pointer'
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
-          <Avatar size='small' color='green' className='mr-3 shadow-md'>
+          <Avatar size='small' color='green' className='mr-3'>
             <CalendarCheck size={16} />
           </Avatar>
           <div className='flex-1'>
             <div className='flex items-center gap-2'>
-              <Typography.Text className='text-lg font-medium'>
+              <Typography.Text className='text-lg font-medium text-[var(--docs-text)]'>
                 {t('每日签到')}
               </Typography.Text>
               {isCollapsed ? (
-                <ChevronDown size={16} className='text-gray-400' />
+                <ChevronDown size={16} className='text-[var(--docs-muted)]' />
               ) : (
-                <ChevronUp size={16} className='text-gray-400' />
+                <ChevronUp size={16} className='text-[var(--docs-muted)]' />
               )}
             </div>
-            <div className='text-xs text-gray-500 dark:text-gray-400'>
+            <div className='text-xs text-[var(--docs-muted)]'>
               {!initialLoaded
                 ? t('正在加载签到状态...')
                 : checkinData.stats?.checked_in_today
@@ -276,7 +276,7 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
           onClick={() => doCheckin()}
           loading={checkinLoading || !initialLoaded}
           disabled={!initialLoaded || checkinData.stats?.checked_in_today}
-          className='!bg-green-600 hover:!bg-green-700'
+          className='!bg-[var(--docs-primary)] hover:opacity-80'
         >
           {!initialLoaded
             ? t('加载中...')
@@ -290,29 +290,29 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
       <Collapsible isOpen={isCollapsed === false} keepDOM>
         {/* 签到统计 */}
         <div className='grid grid-cols-3 gap-3 mb-4 mt-4'>
-          <div className='text-center p-2.5 bg-slate-50 dark:bg-slate-800 rounded-lg'>
-            <div className='text-xl font-bold text-green-600'>
+          <div className='text-center p-2.5 bg-[var(--docs-surface-strong)] border border-[var(--docs-border)] rounded-lg'>
+            <div className='text-xl font-bold text-[var(--docs-primary-strong)]'>
               {checkinData.stats?.total_checkins || 0}
             </div>
-            <div className='text-xs text-gray-500'>{t('累计签到')}</div>
+            <div className='text-xs text-[var(--docs-muted)]'>{t('累计签到')}</div>
           </div>
-          <div className='text-center p-2.5 bg-slate-50 dark:bg-slate-800 rounded-lg'>
+          <div className='text-center p-2.5 bg-[var(--docs-surface-strong)] border border-[var(--docs-border)] rounded-lg'>
             <div className='text-xl font-bold text-orange-600'>
               {renderQuota(monthlyQuota, 6)}
             </div>
-            <div className='text-xs text-gray-500'>{t('本月获得')}</div>
+            <div className='text-xs text-[var(--docs-muted)]'>{t('本月获得')}</div>
           </div>
-          <div className='text-center p-2.5 bg-slate-50 dark:bg-slate-800 rounded-lg'>
+          <div className='text-center p-2.5 bg-[var(--docs-surface-strong)] border border-[var(--docs-border)] rounded-lg'>
             <div className='text-xl font-bold text-blue-600'>
               {renderQuota(checkinData.stats?.total_quota || 0, 6)}
             </div>
-            <div className='text-xs text-gray-500'>{t('累计获得')}</div>
+            <div className='text-xs text-[var(--docs-muted)]'>{t('累计获得')}</div>
           </div>
         </div>
 
         {/* 签到日历 - 使用更紧凑的样式 */}
         <Spin spinning={loading}>
-          <div className='border rounded-lg overflow-hidden checkin-calendar'>
+          <div className='border border-[var(--docs-border)] rounded-lg overflow-hidden checkin-calendar'>
             <style>{`
             .checkin-calendar .semi-calendar {
               font-size: 13px;
@@ -350,7 +350,7 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
               background: transparent;
             }
             .checkin-calendar .semi-calendar-month-today .semi-calendar-month-grid-row-cell-day {
-              background: var(--semi-color-primary);
+              background: var(--docs-primary);
               color: white;border-radius: 50%;
               width: 20px;
               height: 20px;
@@ -367,8 +367,8 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
         </Spin>
 
         {/* 签到说明 */}
-        <div className='mt-3 p-2.5 bg-slate-50 dark:bg-slate-800 rounded-lg'>
-          <Typography.Text type='tertiary' className='text-xs'>
+        <div className='mt-3 p-2.5 bg-[var(--docs-surface-strong)] border border-[var(--docs-border)] rounded-lg'>
+          <Typography.Text className='text-xs text-[var(--docs-muted)]'>
             <ul className='list-disc list-inside space-y-0.5'>
               <li>{t('每日签到可获得随机额度奖励')}</li>
               <li>{t('签到奖励将直接添加到您的账户余额')}</li>

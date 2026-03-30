@@ -38,7 +38,7 @@ const HeaderLogo = ({
   }
 
   return (
-    <Link to='/' className='group flex items-center gap-2'>
+    <Link to='/' className='docs-topbar-brand group flex items-center gap-2'>
       <div className='relative w-8 h-8 md:w-8 md:h-8'>
         <SkeletonWrapper loading={isLoading || !logoLoaded} type='image' />
         <img
@@ -57,7 +57,7 @@ const HeaderLogo = ({
           >
             <Typography.Title
               heading={4}
-              className='!text-lg !font-semibold !mb-0'
+              className='!text-lg !font-semibold !mb-0 !text-white'
             >
               {systemName}
             </Typography.Title>
@@ -65,7 +65,7 @@ const HeaderLogo = ({
           {(isSelfUseMode || isDemoSiteMode) && !isLoading && (
             <Tag
               color={isSelfUseMode ? 'purple' : 'blue'}
-              className='text-xs px-1.5 py-0.5 rounded whitespace-nowrap shadow-sm'
+              className='text-xs px-1.5 py-0.5 rounded whitespace-nowrap shadow-sm !border-0 !text-white'
               size='small'
               shape='circle'
             >

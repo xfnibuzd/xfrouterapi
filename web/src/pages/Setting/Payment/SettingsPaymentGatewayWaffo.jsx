@@ -521,7 +521,7 @@ export default function SettingsPaymentGatewayWaffo(props) {
           <div>
             <div style={{ marginBottom: 4 }}>
               <Text strong>{t('显示名称')}</Text>
-              <span style={{ color: 'var(--semi-color-danger)', marginLeft: 4 }}>*</span>
+              <span style={{ color: 'var(--docs-danger, #ef4444)', marginLeft: 4 }}>*</span>
             </div>
             <Input
               value={payMethodForm.name}
@@ -543,7 +543,7 @@ export default function SettingsPaymentGatewayWaffo(props) {
                     width: 32,
                     height: 32,
                     objectFit: 'contain',
-                    border: '1px solid var(--semi-color-border)',
+                    border: '1px solid var(--docs-border)',
                     borderRadius: 4,
                   }}
                 />

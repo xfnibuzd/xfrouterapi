@@ -127,7 +127,7 @@ const SettingsAnnouncements = ({ options, refresh }) => {
           <div
             style={{
               fontSize: '12px',
-              color: 'var(--semi-color-text-2)',
+              color: 'var(--docs-muted)',
               marginTop: '2px',
             }}
           >
@@ -159,7 +159,7 @@ const SettingsAnnouncements = ({ options, refresh }) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-              color: 'var(--semi-color-text-2)',
+              color: 'var(--docs-muted)',
             }}
           >
             {text || '-'}
@@ -389,9 +389,9 @@ const SettingsAnnouncements = ({ options, refresh }) => {
   const renderHeader = () => (
     <div className='flex flex-col w-full'>
       <div className='mb-2'>
-        <div className='flex items-center text-blue-500'>
+        <div className='flex items-center text-[var(--docs-primary)]'>
           <Bell size={16} className='mr-2' />
-          <Text>
+          <Text className='text-[var(--docs-muted)]'>
             {t(
               '系统公告管理，可以发布系统通知和重要消息（最多100个，前端显示最新20条）',
             )}
@@ -438,7 +438,7 @@ const SettingsAnnouncements = ({ options, refresh }) => {
         {/* 启用开关 */}
         <div className='order-1 md:order-2 flex items-center gap-2'>
           <Switch checked={panelEnabled} onChange={handleToggleEnabled} />
-          <Text>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
+          <Text className='text-[var(--docs-text)]'>{panelEnabled ? t('已启用') : t('已禁用')}</Text>
         </div>
       </div>
     </div>

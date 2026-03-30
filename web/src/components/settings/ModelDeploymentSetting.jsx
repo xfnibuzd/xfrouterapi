@@ -74,7 +74,7 @@ const ModelDeploymentSetting = () => {
   return (
     <>
       <Spin spinning={loading} size='large'>
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingModelDeployment options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

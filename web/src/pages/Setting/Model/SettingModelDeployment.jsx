@@ -193,9 +193,10 @@ export default function SettingModelDeployment(props) {
             {/*</Text>*/}
 
             <Card
+              className='docs-card border border-[var(--docs-border)]'
               title={
                 <div
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--docs-text)' }}
                 >
                   <Cloud size={18} />
                   <span>io.net</span>
@@ -252,11 +253,11 @@ export default function SettingModelDeployment(props) {
                           borderRadius: '6px',
                           fontWeight: '500',
                           borderColor: testing
-                            ? 'var(--semi-color-primary)'
-                            : 'var(--semi-color-border)',
+                            ? 'var(--docs-primary)'
+                            : 'var(--docs-border)',
                           color: testing
-                            ? 'var(--semi-color-primary)'
-                            : 'var(--semi-color-text-0)',
+                            ? 'var(--docs-primary)'
+                            : 'var(--docs-text)',
                         }}
                       >
                         {testing ? t('连接测试中...') : t('测试连接')}
@@ -267,10 +268,10 @@ export default function SettingModelDeployment(props) {
                 <Col xs={24} lg={10}>
                   <div
                     style={{
-                      background: 'var(--semi-color-fill-0)',
+                      background: 'var(--docs-surface-strong)',
                       padding: '16px',
                       borderRadius: '8px',
-                      border: '1px solid var(--semi-color-border)',
+                      border: '1px solid var(--docs-border)',
                       height: '100%',
                       display: 'flex',
                       flexDirection: 'column',
@@ -281,6 +282,7 @@ export default function SettingModelDeployment(props) {
                     <div>
                       <Text
                         strong
+                        className='text-[var(--docs-text)]'
                         style={{ display: 'block', marginBottom: '8px' }}
                       >
                         {t('获取 io.net API Key')}
@@ -292,7 +294,7 @@ export default function SettingModelDeployment(props) {
                           display: 'flex',
                           flexDirection: 'column',
                           gap: '6px',
-                          color: 'var(--semi-color-text-2)',
+                          color: 'var(--docs-muted)',
                           fontSize: '13px',
                           lineHeight: 1.6,
                         }}

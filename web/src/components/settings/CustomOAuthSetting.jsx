@@ -596,7 +596,7 @@ const CustomOAuthSetting = ({ serverAddress }) => {
     .join(', ');
 
   return (
-    <Card>
+    <Card className='docs-card'>
       <Form.Section text={t('自定义 OAuth 提供商')}>
         <Banner
           type="info"
@@ -811,13 +811,13 @@ const CustomOAuthSetting = ({ serverAddress }) => {
                   style={{
                     width: '100%',
                     minHeight: 74,
-                    border: '1px solid var(--semi-color-border)',
+                    border: '1px solid var(--docs-border)',
                     borderRadius: 8,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: 24,
-                    background: 'var(--semi-color-fill-0)',
+                    background: 'var(--docs-surface-strong)',
                   }}
                 >
                   {getOAuthProviderIcon(formValues.icon || '', 24)}

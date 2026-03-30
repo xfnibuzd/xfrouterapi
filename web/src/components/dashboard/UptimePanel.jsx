@@ -49,7 +49,7 @@ const UptimePanel = ({
   return (
     <Card
       {...CARD_PROPS}
-      className='shadow-sm !rounded-2xl lg:col-span-1'
+      className='docs-card lg:col-span-1'
       title={
         <div className='flex items-center justify-between w-full gap-2'>
           <div className='flex items-center gap-2'>
@@ -131,7 +131,7 @@ const UptimePanel = ({
 
       {/* 图例 */}
       {uptimeData.length > 0 && (
-        <div className='p-3 bg-gray-50 rounded-b-2xl'>
+        <div className='p-3 border-t border-[var(--docs-border)] bg-[var(--docs-surface-strong)] rounded-b-[12px]'>
           <div className='flex flex-wrap gap-3 text-xs justify-center'>
             {uptimeLegendData.map((legend, index) => (
               <div key={index} className='flex items-center gap-1'>
@@ -139,7 +139,7 @@ const UptimePanel = ({
                   className='w-2 h-2 rounded-full'
                   style={{ backgroundColor: legend.color }}
                 />
-                <span className='text-gray-600'>{legend.label}</span>
+                <span className='text-[var(--docs-muted)]'>{legend.label}</span>
               </div>
             ))}
           </div>

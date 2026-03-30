@@ -39,7 +39,7 @@ const StatsCards = ({
           <Card
             key={idx}
             {...CARD_PROPS}
-            className={`${group.color} border-0 !rounded-2xl w-full`}
+            className={`${group.color} w-full`}
             title={group.title}
           >
             <div className='space-y-4'>
@@ -58,8 +58,10 @@ const StatsCards = ({
                       {item.icon}
                     </Avatar>
                     <div>
-                      <div className='text-xs text-gray-500'>{item.title}</div>
-                      <div className='text-lg font-semibold'>
+                      <div className='text-xs text-[var(--docs-muted)]'>
+                        {item.title}
+                      </div>
+                      <div className='text-lg font-semibold text-[var(--docs-text)]'>
                         <Skeleton
                           loading={loading}
                           active

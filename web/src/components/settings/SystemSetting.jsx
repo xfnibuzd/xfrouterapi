@@ -711,7 +711,7 @@ const SystemSetting = () => {
                 marginTop: '10px',
               }}
             >
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('通用设置')}>
                   <Row
                     gutter={{ xs: 8, sm: 16, md: 24, lg: 24, xl: 24, xxl: 24 }}
@@ -733,7 +733,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('代理设置')}>
                   <Banner
                     type='info'
@@ -782,7 +782,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('SSRF防护设置')}>
                   <Text extraText={t('SSRF防护详细说明')}>
                     {t('配置服务器端请求伪造(SSRF)防护，用于保护内网资源安全')}
@@ -982,7 +982,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置登录注册')}>
                   <Row
                     gutter={{ xs: 8, sm: 16, md: 24, lg: 24, xl: 24, xxl: 24 }}
@@ -1094,7 +1094,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 Passkey')}>
                   <Text>{t('用以支持基于 WebAuthn 的无密码登录注册')}</Text>
                   <Banner
@@ -1223,7 +1223,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置邮箱域名白名单')}>
                   <Text>{t('用以防止恶意用户利用临时邮箱批量注册')}</Text>
                   <Row
@@ -1288,7 +1288,7 @@ const SystemSetting = () => {
                   </Button>
                 </Form.Section>
               </Card>
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 SMTP')}>
                   <Text>{t('用以支持系统的邮件发送')}</Text>
                   <Row
@@ -1340,7 +1340,7 @@ const SystemSetting = () => {
                   <Button onClick={submitSMTP}>{t('保存 SMTP 设置')}</Button>
                 </Form.Section>
               </Card>
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 OIDC')}>
                   <Text>
                     {t(
@@ -1418,7 +1418,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 GitHub OAuth App')}>
                   <Text>{t('用以支持通过 GitHub 进行登录注册')}</Text>
                   <Banner
@@ -1449,7 +1449,7 @@ const SystemSetting = () => {
                   </Button>
                 </Form.Section>
               </Card>
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 Discord OAuth')}>
                   <Text>{t('用以支持通过 Discord 进行登录注册')}</Text>
                   <Banner
@@ -1480,7 +1480,7 @@ const SystemSetting = () => {
                   </Button>
                 </Form.Section>
               </Card>
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 Linux DO OAuth')}>
                   <Text>
                     {t('用以支持通过 Linux DO 进行登录注册')}
@@ -1537,7 +1537,7 @@ const SystemSetting = () => {
 
               <CustomOAuthSetting serverAddress={inputs.ServerAddress} />
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 WeChat Server')}>
                   <Text>{t('用以支持通过微信进行登录注册')}</Text>
                   <Row
@@ -1570,7 +1570,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 Telegram 登录')}>
                   <Text>{t('用以支持通过 Telegram 进行登录注册')}</Text>
                   <Row
@@ -1597,7 +1597,7 @@ const SystemSetting = () => {
                 </Form.Section>
               </Card>
 
-              <Card>
+              <Card className='docs-card'>
                 <Form.Section text={t('配置 Turnstile')}>
                   <Text>{t('用以支持用户校验')}</Text>
                   <Row

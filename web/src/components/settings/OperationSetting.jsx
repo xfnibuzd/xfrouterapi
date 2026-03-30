@@ -123,7 +123,7 @@ const OperationSetting = () => {
     <>
       <Spin spinning={loading} size='large'>
         {/* 通用设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsGeneral options={inputs} refresh={onRefresh} />
         </Card>
         {/* 顶栏模块管理 */}
@@ -135,23 +135,23 @@ const OperationSetting = () => {
           <SettingsSidebarModulesAdmin options={inputs} refresh={onRefresh} />
         </div>
         {/* 屏蔽词过滤设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsSensitiveWords options={inputs} refresh={onRefresh} />
         </Card>
         {/* 日志设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsLog options={inputs} refresh={onRefresh} />
         </Card>
         {/* 监控设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsMonitoring options={inputs} refresh={onRefresh} />
         </Card>
         {/* 额度设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsCreditLimit options={inputs} refresh={onRefresh} />
         </Card>
         {/* 签到设置 */}
-        <Card style={{ marginTop: '10px' }}>
+        <Card className='docs-card' style={{ marginTop: '10px' }}>
           <SettingsCheckin options={inputs} refresh={onRefresh} />
         </Card>
       </Spin>

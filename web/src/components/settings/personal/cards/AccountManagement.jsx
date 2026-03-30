@@ -74,7 +74,7 @@ const AccountManagement = ({
 }) => {
   const renderAccountInfo = (accountId, label) => {
     if (!accountId || accountId === '') {
-      return <span className='text-gray-500'>{t('未绑定')}</span>;
+      return <span className='text-[var(--docs-muted)]'>{t('未绑定')}</span>;
     }
 
     const popContent = (
@@ -83,14 +83,14 @@ const AccountManagement = ({
           {accountId}
         </Typography.Paragraph>
         {label ? (
-          <div className='mt-1 text-[11px] text-gray-500'>{label}</div>
+          <div className='mt-1 text-[11px] text-[var(--docs-muted)]'>{label}</div>
         ) : null}
       </div>
     );
 
     return (
       <Popover content={popContent} position='top' trigger='hover'>
-        <span className='block max-w-full truncate text-gray-600 hover:text-blue-600 cursor-pointer'>
+        <span className='block max-w-full truncate text-[var(--docs-muted)] hover:text-[var(--docs-primary)] cursor-pointer'>
           {accountId}
         </span>
       </Popover>
@@ -169,17 +169,17 @@ const AccountManagement = ({
     : t('尚未使用');
 
   return (
-    <Card className='!rounded-2xl'>
+    <Card className='docs-card'>
       {/* 卡片头部 */}
       <div className='flex items-center mb-4'>
-        <Avatar size='small' color='teal' className='mr-3 shadow-md'>
+        <Avatar size='small' color='teal' className='mr-3'>
           <UserPlus size={16} />
         </Avatar>
         <div>
-          <Typography.Text className='text-lg font-medium'>
-            {t('账户管理')}
+          <Typography.Text className='text-lg font-medium text-[var(--docs-text)]'>
+            {t('账户 management')}
           </Typography.Text>
-          <div className='text-xs text-gray-600'>
+          <div className='text-xs text-[var(--docs-muted)]'>
             {t('账户绑定、安全设置和身份验证')}
           </div>
         </div>
@@ -199,20 +199,20 @@ const AccountManagement = ({
           <div className='py-4'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
               {/* 邮箱绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <IconMail
                         size='default'
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('邮箱')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.email,
                           t('邮箱地址'),
@@ -236,20 +236,20 @@ const AccountManagement = ({
               </Card>
 
               {/* 微信绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <SiWechat
                         size={20}
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('微信')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {!status.wechat_login
                           ? t('未启用')
                           : isBound(userState.user?.wechat_id)
@@ -277,20 +277,20 @@ const AccountManagement = ({
               </Card>
 
               {/* GitHub绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <IconGithubLogo
                         size='default'
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('GitHub')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.github_id,
                           t('GitHub ID'),
@@ -318,20 +318,20 @@ const AccountManagement = ({
               </Card>
 
               {/* Discord绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <SiDiscord
                         size={20}
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('Discord')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.discord_id,
                           t('Discord ID'),
@@ -359,20 +359,20 @@ const AccountManagement = ({
               </Card>
 
               {/* OIDC绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <IconShield
                         size='default'
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('OIDC')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.oidc_id,
                           t('OIDC ID'),
@@ -402,20 +402,20 @@ const AccountManagement = ({
               </Card>
 
               {/* Telegram绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <SiTelegram
                         size={20}
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('Telegram')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.telegram_id,
                           t('Telegram ID'),
@@ -463,7 +463,7 @@ const AccountManagement = ({
                 onCancel={() => setShowTelegramBindModal(false)}
                 footer={null}
               >
-                <div className='my-3 text-sm text-gray-600'>
+                <div className='my-3 text-sm text-[var(--docs-muted)]'>
                   {t('点击下方按钮通过 Telegram 完成绑定')}
                 </div>
                 <div className='flex justify-center'>
@@ -477,20 +477,20 @@ const AccountManagement = ({
               </Modal>
 
               {/* LinuxDO绑定 */}
-              <Card className='!rounded-xl'>
+              <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                 <div className='flex items-center justify-between gap-3'>
                   <div className='flex items-center flex-1 min-w-0'>
-                    <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                    <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                       <SiLinux
                         size={20}
-                        className='text-slate-600 dark:text-slate-300'
+                        className='text-[var(--docs-text)]'
                       />
                     </div>
                     <div className='flex-1 min-w-0'>
-                      <div className='font-medium text-gray-900'>
+                      <div className='font-medium text-[var(--docs-text)]'>
                         {t('LinuxDO')}
                       </div>
-                      <div className='text-sm text-gray-500 truncate'>
+                      <div className='text-sm text-[var(--docs-muted)] truncate'>
                         {renderAccountInfo(
                           userState.user?.linux_do_id,
                           t('LinuxDO ID'),
@@ -523,20 +523,20 @@ const AccountManagement = ({
                   const bound = isCustomOAuthBound(provider.id);
                   const binding = getCustomOAuthBinding(provider.id);
                   return (
-                    <Card key={provider.slug} className='!rounded-xl'>
+                    <Card key={provider.slug} className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)]'>
                       <div className='flex items-center justify-between gap-3'>
                         <div className='flex items-center flex-1 min-w-0'>
-                          <div className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mr-3 flex-shrink-0'>
+                          <div className='w-10 h-10 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-3 flex-shrink-0'>
                             {getOAuthProviderIcon(
                               provider.icon || binding?.provider_icon || '',
                               20,
                             )}
                           </div>
                           <div className='flex-1 min-w-0'>
-                            <div className='font-medium text-gray-900'>
+                            <div className='font-medium text-[var(--docs-text)]'>
                               {provider.name}
                             </div>
-                            <div className='text-sm text-gray-500 truncate'>
+                            <div className='text-sm text-[var(--docs-muted)] truncate'>
                               {bound
                                 ? renderAccountInfo(
                                     binding?.provider_user_id,
@@ -591,18 +591,17 @@ const AccountManagement = ({
           <div className='py-4'>
             <div className='space-y-6'>
               <Space vertical className='w-full'>
-                {/* 系统访问令牌 */}
-                <Card className='!rounded-xl w-full'>
+                <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)] w-full'>
                   <div className='flex flex-col sm:flex-row items-start sm:justify-between gap-4'>
                     <div className='flex items-start w-full sm:w-auto'>
-                      <div className='w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mr-4 flex-shrink-0'>
-                        <IconKey size='large' className='text-slate-600' />
+                      <div className='w-12 h-12 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-4 flex-shrink-0'>
+                        <IconKey size='large' className='text-[var(--docs-text)]' />
                       </div>
                       <div className='flex-1'>
-                        <Typography.Title heading={6} className='mb-1'>
+                        <Typography.Title heading={6} className='mb-1 text-[var(--docs-text)]'>
                           {t('系统访问令牌')}
                         </Typography.Title>
-                        <Typography.Text type='tertiary' className='text-sm'>
+                        <Typography.Text className='text-sm text-[var(--docs-muted)]'>
                           {t('用于API调用的身份验证令牌，请妥善保管')}
                         </Typography.Text>
                         {systemToken && (
@@ -622,7 +621,7 @@ const AccountManagement = ({
                       type='primary'
                       theme='solid'
                       onClick={generateAccessToken}
-                      className='!bg-slate-600 hover:!bg-slate-700 w-full sm:w-auto'
+                      className='!bg-[var(--docs-primary)] hover:opacity-80 w-full sm:w-auto'
                       icon={<IconKey />}
                     >
                       {systemToken ? t('重新生成') : t('生成令牌')}
@@ -630,18 +629,17 @@ const AccountManagement = ({
                   </div>
                 </Card>
 
-                {/* 密码管理 */}
-                <Card className='!rounded-xl w-full'>
+                <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)] w-full'>
                   <div className='flex flex-col sm:flex-row items-start sm:justify-between gap-4'>
                     <div className='flex items-start w-full sm:w-auto'>
-                      <div className='w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mr-4 flex-shrink-0'>
-                        <IconLock size='large' className='text-slate-600' />
+                      <div className='w-12 h-12 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-4 flex-shrink-0'>
+                        <IconLock size='large' className='text-[var(--docs-text)]' />
                       </div>
                       <div>
-                        <Typography.Title heading={6} className='mb-1'>
+                        <Typography.Title heading={6} className='mb-1 text-[var(--docs-text)]'>
                           {t('密码管理')}
                         </Typography.Title>
-                        <Typography.Text type='tertiary' className='text-sm'>
+                        <Typography.Text className='text-sm text-[var(--docs-muted)]'>
                           {t('定期更改密码可以提高账户安全性')}
                         </Typography.Text>
                       </div>
@@ -650,7 +648,7 @@ const AccountManagement = ({
                       type='primary'
                       theme='solid'
                       onClick={() => setShowChangePasswordModal(true)}
-                      className='!bg-slate-600 hover:!bg-slate-700 w-full sm:w-auto'
+                      className='!bg-[var(--docs-primary)] hover:opacity-80 w-full sm:w-auto'
                       icon={<IconLock />}
                     >
                       {t('修改密码')}
@@ -658,23 +656,22 @@ const AccountManagement = ({
                   </div>
                 </Card>
 
-                {/* Passkey 设置 */}
-                <Card className='!rounded-xl w-full'>
+                <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)] w-full'>
                   <div className='flex flex-col sm:flex-row items-start sm:justify-between gap-4'>
                     <div className='flex items-start w-full sm:w-auto'>
-                      <div className='w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mr-4 flex-shrink-0'>
-                        <IconKey size='large' className='text-slate-600' />
+                      <div className='w-12 h-12 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-4 flex-shrink-0'>
+                        <IconKey size='large' className='text-[var(--docs-text)]' />
                       </div>
                       <div>
-                        <Typography.Title heading={6} className='mb-1'>
+                        <Typography.Title heading={6} className='mb-1 text-[var(--docs-text)]'>
                           {t('Passkey 登录')}
                         </Typography.Title>
-                        <Typography.Text type='tertiary' className='text-sm'>
+                        <Typography.Text className='text-sm text-[var(--docs-muted)]'>
                           {passkeyEnabled
                             ? t('已启用 Passkey，无需密码即可登录')
                             : t('使用 Passkey 实现免密且更安全的登录体验')}
                         </Typography.Text>
-                        <div className='mt-2 text-xs text-gray-500 space-y-1'>
+                        <div className='mt-2 text-xs text-[var(--docs-muted)] space-y-1'>
                           <div>
                             {t('最后使用时间')}：{lastUsedLabel}
                           </div>
@@ -715,7 +712,7 @@ const AccountManagement = ({
                             }
                           : onPasskeyRegister
                       }
-                      className={`w-full sm:w-auto ${passkeyEnabled ? '!bg-slate-500 hover:!bg-slate-600' : ''}`}
+                      className={`w-full sm:w-auto ${passkeyEnabled ? '!bg-[var(--docs-danger,#ef4444)] hover:opacity-80' : ''}`}
                       icon={<IconKey />}
                       disabled={!passkeySupported && !passkeyEnabled}
                       loading={
@@ -732,21 +729,20 @@ const AccountManagement = ({
                 {/* 两步验证设置 */}
                 <TwoFASetting t={t} />
 
-                {/* 危险区域 */}
-                <Card className='!rounded-xl w-full'>
+                <Card className='docs-card border border-[var(--docs-border)] !bg-[var(--docs-surface-strong)] w-full'>
                   <div className='flex flex-col sm:flex-row items-start sm:justify-between gap-4'>
                     <div className='flex items-start w-full sm:w-auto'>
-                      <div className='w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mr-4 flex-shrink-0'>
-                        <IconDelete size='large' className='text-slate-600' />
+                      <div className='w-12 h-12 rounded-full bg-[var(--docs-surface)] border border-[var(--docs-border)] flex items-center justify-center mr-4 flex-shrink-0'>
+                        <IconDelete size='large' className='text-[var(--docs-text)]' />
                       </div>
                       <div>
                         <Typography.Title
                           heading={6}
-                          className='mb-1 text-slate-700'
+                          className='mb-1 text-[var(--docs-text)]'
                         >
                           {t('删除账户')}
                         </Typography.Title>
-                        <Typography.Text type='tertiary' className='text-sm'>
+                        <Typography.Text className='text-sm text-[var(--docs-muted)]'>
                           {t('此操作不可逆，所有数据将被永久删除')}
                         </Typography.Text>
                       </div>
@@ -755,7 +751,7 @@ const AccountManagement = ({
                       type='danger'
                       theme='solid'
                       onClick={() => setShowAccountDeleteModal(true)}
-                      className='w-full sm:w-auto !bg-slate-500 hover:!bg-slate-600'
+                      className='w-full sm:w-auto !bg-[var(--docs-danger,#ef4444)] hover:opacity-80'
                       icon={<IconDelete />}
                     >
                       {t('删除账户')}

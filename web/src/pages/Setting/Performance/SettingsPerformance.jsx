@@ -540,11 +540,12 @@ export default function SettingsPerformance(props) {
                   <div
                     style={{
                       padding: 16,
-                      background: 'var(--semi-color-fill-0)',
+                      background: 'var(--docs-surface-strong)',
                       borderRadius: 8,
                       flex: 1,
                       display: 'flex',
                       flexDirection: 'column',
+                      border: '1px solid var(--docs-border)',
                     }}
                   >
                     <Text strong style={{ marginBottom: 8, display: 'block' }}>
@@ -556,8 +557,8 @@ export default function SettingsPerformance(props) {
                       style={{ marginBottom: 8 }}
                       stroke={
                         parseFloat(diskCacheUsagePercent) > 80
-                          ? 'var(--semi-color-danger)'
-                          : 'var(--semi-color-primary)'
+                          ? 'var(--docs-error)'
+                          : 'var(--docs-primary)'
                       }
                     />
                     <div
@@ -567,13 +568,13 @@ export default function SettingsPerformance(props) {
                         marginBottom: 8,
                       }}
                     >
-                      <Text type='tertiary'>
+                      <Text className='text-[var(--docs-muted)]'>
                         {formatBytes(
                           stats.cache_stats.current_disk_usage_bytes,
                         )}{' '}
                         / {formatBytes(stats.cache_stats.disk_cache_max_bytes)}
                       </Text>
-                      <Text type='tertiary'>
+                      <Text className='text-[var(--docs-muted)]'>
                         {t('活跃文件')}: {stats.cache_stats.active_disk_files}
                       </Text>
                     </div>
@@ -588,11 +589,12 @@ export default function SettingsPerformance(props) {
                   <div
                     style={{
                       padding: 16,
-                      background: 'var(--semi-color-fill-0)',
+                      background: 'var(--docs-surface-strong)',
                       borderRadius: 8,
                       flex: 1,
                       display: 'flex',
                       flexDirection: 'column',
+                      border: '1px solid var(--docs-border)',
                     }}
                   >
                     <Text strong style={{ marginBottom: 8, display: 'block' }}>
@@ -632,8 +634,9 @@ export default function SettingsPerformance(props) {
                     <div
                       style={{
                         padding: 16,
-                        background: 'var(--semi-color-fill-0)',
+                        background: 'var(--docs-surface-strong)',
                         borderRadius: 8,
+                        border: '1px solid var(--docs-border)',
                       }}
                     >
                       <Text
@@ -650,10 +653,10 @@ export default function SettingsPerformance(props) {
                         style={{ marginBottom: 8 }}
                         stroke={
                           stats.disk_space_info.used_percent > 90
-                            ? 'var(--semi-color-danger)'
+                            ? 'var(--docs-error)'
                             : stats.disk_space_info.used_percent > 70
-                              ? 'var(--semi-color-warning)'
-                              : 'var(--semi-color-primary)'
+                              ? 'var(--docs-warning)'
+                              : 'var(--docs-primary)'
                         }
                       />
                       <div
@@ -664,13 +667,13 @@ export default function SettingsPerformance(props) {
                           gap: 8,
                         }}
                       >
-                        <Text type='tertiary'>
+                        <Text className='text-[var(--docs-muted)]'>
                           {t('已用')}: {formatBytes(stats.disk_space_info.used)}
                         </Text>
-                        <Text type='tertiary'>
+                        <Text className='text-[var(--docs-muted)]'>
                           {t('可用')}: {formatBytes(stats.disk_space_info.free)}
                         </Text>
-                        <Text type='tertiary'>
+                        <Text className='text-[var(--docs-muted)]'>
                           {t('总计')}:{' '}
                           {formatBytes(stats.disk_space_info.total)}
                         </Text>

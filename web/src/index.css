@@ -18,15 +18,35 @@
   --sidebar-width: 220px;
   --sidebar-width-collapsed: 70px;
   --sidebar-current-width: var(--sidebar-width);
-  --apple-glass-bg: rgba(255, 255, 255, 0.7);
-  --apple-glass-border: rgba(0, 0, 0, 0.05);
-  --apple-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  --docs-page-bg: #f6f8fb;
+  --docs-surface: #ffffff;
+  --docs-surface-strong: #f8fafc;
+  --docs-border: #d7dde5;
+  --docs-border-strong: #c7d0dc;
+  --docs-text: #1f2328;
+  --docs-muted: #57606a;
+  --docs-primary: #0969da;
+  --docs-primary-strong: #0550ae;
+  --docs-primary-soft: rgba(9, 105, 218, 0.1);
+  --docs-topbar-bg: #1f6feb;
+  --docs-sidebar-bg: #ffffff;
+  --docs-sidebar-active-bg: rgba(9, 105, 218, 0.08);
 }
 
 body[theme-mode='dark'] {
-  --apple-glass-bg: rgba(28, 28, 30, 0.7);
-  --apple-glass-border: rgba(255, 255, 255, 0.1);
-  --apple-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  --docs-page-bg: #0d1117;
+  --docs-surface: #161b22;
+  --docs-surface-strong: #0f141a;
+  --docs-border: #30363d;
+  --docs-border-strong: #3d444d;
+  --docs-text: #c9d1d9;
+  --docs-muted: #8b949e;
+  --docs-primary: #58a6ff;
+  --docs-primary-strong: #1f6feb;
+  --docs-primary-soft: rgba(88, 166, 255, 0.14);
+  --docs-topbar-bg: #1f6feb;
+  --docs-sidebar-bg: #0d1117;
+  --docs-sidebar-active-bg: rgba(88, 166, 255, 0.12);
 }
 
 body.sidebar-collapsed {
@@ -35,8 +55,8 @@ body.sidebar-collapsed {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color: var(--semi-color-text-0);
-  background-color: var(--semi-color-bg-0);
+  color: var(--docs-text);
+  background: var(--docs-page-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,29 +64,34 @@ body {
 /* 覆盖 Semi UI 的默认圆角，实现苹果风格的圆润感 */
 body {
   --semi-border-radius-small: 6px;
-  --semi-border-radius-medium: 12px;
-  --semi-border-radius-large: 16px;
-  --semi-border-radius-extra-large: 24px;
+  --semi-border-radius-medium: 10px;
+  --semi-border-radius-large: 12px;
+  --semi-border-radius-extra-large: 16px;
 }
 
-/* 增强卡片、弹窗的毛玻璃效果 */
+/* 增强卡片、弹窗与浮层的文档站点风格 */
 .semi-card, .semi-modal-content, .semi-popover {
-  background: var(--apple-glass-bg) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--apple-glass-border);
-  box-shadow: var(--apple-glass-shadow) !important;
-  border-radius: var(--semi-border-radius-large) !important;
+  background: var(--docs-surface) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--docs-border) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.04) !important;
+  border-radius: 12px !important;
 }
 
 .app-layout {
   height: 100vh;
   height: 100dvh;
+  background: var(--docs-page-bg);
 }
 
 .app-sider {
-  height: calc(100vh - 64px);
-  height: calc(100dvh - 64px);
+  height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
+}
+
+.docs-page-shell {
+  min-height: 100%;
 }
 
 code {
@@ -147,10 +172,8 @@ code {
   flex-direction: column;
   min-height: 0;
   transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: var(--apple-glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-right: 1px solid var(--apple-glass-border);
+  background: var(--docs-sidebar-bg);
+  border-right: 1px solid var(--docs-border);
 }
 
 .sidebar-nav {
@@ -173,34 +196,35 @@ code {
 
 /* 侧边栏导航项样式 */
 .sidebar-nav-item {
-  border-radius: 12px;
+  border-radius: 10px;
   margin: 4px 12px;
   transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-  padding: 10px 14px;
+  padding: 9px 12px;
+  color: var(--docs-text);
 }
 
 .sidebar-nav-item:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  transform: scale(0.98);
+  background-color: rgba(9, 105, 218, 0.05);
+  transform: none;
 }
 
 body[theme-mode='dark'] .sidebar-nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(88, 166, 255, 0.08);
 }
 
 .sidebar-nav-item-selected {
-  background-color: var(--semi-color-primary) !important;
-  color: #ffffff !important;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(var(--semi-blue-5), 0.3);
+  background-color: var(--docs-sidebar-active-bg) !important;
+  color: var(--docs-primary-strong) !important;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(9, 105, 218, 0.16);
 }
 
 .sidebar-nav-item-selected .semi-navigation-item-text span {
-  color: #ffffff !important;
+  color: var(--docs-primary-strong) !important;
 }
 
 .sidebar-nav-item-selected .sidebar-icon-container svg {
-  color: #ffffff !important;
+  color: var(--docs-primary-strong) !important;
 }
 
 /* 底部折叠按钮 */
@@ -215,7 +239,7 @@ body[theme-mode='dark'] .sidebar-nav-item:hover {
   position: sticky;
   bottom: 0;
   z-index: 10;
-  border-top: 1px solid var(--apple-glass-border);
+  border-top: 1px solid var(--docs-border);
 }
 
 .sidebar-collapse-button-inner {
@@ -236,23 +260,142 @@ body[theme-mode='dark'] .sidebar-nav-item:hover {
 
 /* 侧边栏区域容器 */
 .sidebar-section {
-  padding-top: 12px;
+  padding: 14px 0 6px;
+}
+
+.sidebar-group-label {
+  padding: 0 16px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--docs-muted);
 }
 
 @media (max-width: 767px) {
   .sidebar-container {
-    background: var(--semi-color-bg-1);
-    border-right: 1px solid var(--semi-color-border);
+    background: var(--docs-sidebar-bg);
+    border-right: 1px solid var(--docs-border);
   }
 
   .sidebar-nav {
-    background: var(--semi-color-bg-1);
+    background: var(--docs-sidebar-bg);
   }
 
   .sidebar-collapse-button {
-    background-color: var(--semi-color-bg-1);
-    box-shadow: 0 -10px 10px -5px var(--semi-color-bg-1);
+    background-color: var(--docs-sidebar-bg);
+    box-shadow: 0 -10px 10px -5px var(--docs-sidebar-bg);
   }
+}
+
+/* ==================== 顶部导航与文档站风格 ==================== */
+.docs-topbar {
+  background: var(--docs-topbar-bg);
+  color: #ffffff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.docs-topbar-inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.docs-topbar .semi-button,
+.docs-topbar .semi-dropdown,
+.docs-topbar .semi-navigation-item,
+.docs-topbar .semi-navigation-sub-title {
+  color: #ffffff !important;
+}
+
+.docs-topbar .semi-button:hover,
+.docs-topbar .semi-button:focus,
+.docs-topbar .semi-navigation-item:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.docs-topbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.docs-topbar-nav {
+  flex: 1;
+  min-width: 0;
+}
+
+.docs-topbar-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.docs-topbar-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.docs-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.docs-topbar .semi-button.docs-icon-button,
+.docs-topbar .docs-icon-button {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.docs-topbar .semi-button.docs-icon-button:hover,
+.docs-topbar .docs-icon-button:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* ==================== 文档风格卡片 ==================== */
+.docs-card {
+  background: var(--docs-surface) !important;
+  border: 1px solid var(--docs-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(27, 31, 35, 0.04) !important;
+}
+
+.docs-card .semi-card-header {
+  padding: 16px 18px 12px !important;
+  color: var(--docs-text);
+}
+
+.docs-card .semi-card-body {
+  padding: 0 18px 18px !important;
+}
+
+.docs-card-compact .semi-card-body {
+  padding: 0 14px 14px !important;
+}
+
+.docs-card-accent-blue {
+  background: linear-gradient(180deg, rgba(9, 105, 218, 0.04), rgba(255, 255, 255, 1)) !important;
+}
+
+.docs-card-accent-green {
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.04), rgba(255, 255, 255, 1)) !important;
+}
+
+.docs-card-accent-yellow {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.04), rgba(255, 255, 255, 1)) !important;
+}
+
+.docs-card-accent-indigo {
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.04), rgba(255, 255, 255, 1)) !important;
 }
 
 /* ==================== 聊天界面样式 ==================== */

@@ -58,20 +58,20 @@ const ModelBasicInfo = ({ modelData, vendorsMap = {}, t }) => {
   };
 
   return (
-    <Card className='!rounded-2xl shadow-sm border-0 mb-6'>
+    <Card className='docs-card mb-6'>
       <div className='flex items-center mb-4'>
-        <Avatar size='small' color='blue' className='mr-2 shadow-md'>
+        <Avatar size='small' color='blue' className='mr-2'>
           <IconInfoCircle size={16} />
         </Avatar>
         <div>
-          <Text className='text-lg font-medium'>{t('基本信息')}</Text>
-          <div className='text-xs text-gray-600'>
+          <Text className='text-lg font-medium text-[var(--docs-text)]'>{t('基本信息')}</Text>
+          <div className='text-xs text-[var(--docs-muted)]'>
             {t('模型的详细描述和基本特性')}
           </div>
         </div>
       </div>
-      <div className='text-gray-600'>
-        <p className='mb-4'>{getModelDescription()}</p>
+      <div className='text-[var(--docs-text)]'>
+        <p className='mb-4 text-[var(--docs-muted)]'>{getModelDescription()}</p>
         {getModelTags().length > 0 && (
           <Space wrap>
             {getModelTags().map((tag, index) => (
